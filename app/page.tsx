@@ -1,19 +1,25 @@
 import CTA from "@/components/CTA";
 import FeaturesAndServicesSection from "@/components/FeaturesAndServicesSection";
+import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
+import NavBar from "@/components/NavBar";
 import OrphansInfoSection from "@/components/OrphansInfoSection";
 import TeamBehindSection from "@/components/TeamBehindSection";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen max-w-[1400px] flex-col items-center justify-between px-3 sm:px-8 md:px-10 lg:px-32">
+    <main className="flex flex-col items-center justify-between w-full min-h-screen space-y-8 ">
+      
       <Hero />
-      <FeaturesAndServicesSection/>
-      <GallerySection/>
-      <OrphansInfoSection/>
-      <TeamBehindSection/>
-      <CTA/>
+      <FeaturesAndServicesSection />
+      <GallerySection />
+      <OrphansInfoSection />
+      <TeamBehindSection />
+      <CTA />
+      <Separator />
+      
     </main>
   );
 }
