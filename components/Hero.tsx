@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col items-center justify-start py-1 mx-auto sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
+    <section className="flex flex-col items-center justify-start py-1 mx-auto min-h-[90dvh] sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
       <Image
         className="object-cover object-center w-4/5 mb-10 rounded lg:w-2/6 md:w-3/6"
         alt="hero"

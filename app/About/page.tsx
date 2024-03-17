@@ -1,11 +1,16 @@
-import React from 'react'
+import { Metadata } from "next";
+import React from "react";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const page = () => {
   return (
-    <div>
-        Aboute page
-    </div>
-  )
-}
+    <main className="w-full min-h-[50dvh]">
+      <h1>About us</h1>
+    </main>
+  );
+};
 
-export default page
+export default page;

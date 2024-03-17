@@ -18,11 +18,11 @@ const DropDownMenuNav = () => {
       <DropdownMenuTrigger>
         <Menu />
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent >
         <DropdownMenuLabel>Navigation</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {NavLinks.map((link, i) => (
-          <DropdownMenuItem key={i}>
+          <DropdownMenuItem key={i} className="pr-16">
             <Link href={link.Link}>{link.Name}</Link>
           </DropdownMenuItem>
         ))}
