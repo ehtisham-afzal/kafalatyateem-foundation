@@ -23,13 +23,13 @@ const FeaturesCard = ({
   return (
     <Card
       className={cn(
-        "flex flex-row-reverse justify-between md:flex-col w-full h-24  md:justify-center items-center md:size-60 gap-5 md:text-center hover:border-primary",
+        "flex flex-row-reverse justify-between sm:flex-col w-full h-24  sm:justify-center items-center sm:size-60 gap-5 md:text-center hover:border-primary",
         className
       )}
     >
       {IconName && <IconComponent className="pr-2 size-16 md:pr-0" />}
       <CardHeader className="items-start px-4 py-2 md:items-center">
-        <CardTitle className="text-lg font-normal md:text-2xl">
+        <CardTitle className="text-lg md:text-2xl">
           {Title}
         </CardTitle>
         <CardDescription>{Description}</CardDescription>
