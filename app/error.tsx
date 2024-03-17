@@ -17,9 +17,9 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
-      <TriangleAlert className="w-1/6 text-red-400" />
-      <h2 className="font-normal text-center md:text-lg">
+    <main className="flex flex-col items-center justify-center min-h-[90dvh]">
+      <TriangleAlert className="w-1/6 text-red-400 h-1/6" />
+      <h2 className="font-normal text-center shadow-lg md:text-3xl">
         Something went wrong!
       </h2>
       <Button

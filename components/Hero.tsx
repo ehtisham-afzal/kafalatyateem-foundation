@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
       />
       <div className="w-full lg:w-2/3">
         <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl text-primary">
-        أَنَا وَكَافِلُ الْيَتِيمِ فِي الْجَنَّةِ هَكَذَا
+          أَنَا وَكَافِلُ الْيَتِيمِ فِي الْجَنَّةِ هَكَذَا
         </h1>
         <p className="mb-8 text-2xl font-semibold leading-relaxed scroll-m-20 text-muted-foreground">
           The Kafalate e Yateem Center Malakand is a home for orphans, abandoned
@@ -24,11 +25,16 @@ const Hero = () => {
           every child can thrive.
         </p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button size="lg" className="w-full text-lg sm:w-40">
-            Donate now
+          <Button asChild size="lg" className="w-full text-lg sm:w-40">
+            <Link href="/Donate">Donate now</Link>
           </Button>
-          <Button size="lg" variant="outline" className="w-full text-lg sm:w-40">
-            Know about us
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="w-full text-lg sm:w-40"
+          >
+            <Link href="/About">Know about us</Link>
           </Button>
         </div>
       </div>
