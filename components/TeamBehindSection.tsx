@@ -39,6 +39,7 @@ const TeamBehindSection = () => {
           Description="President"
           ImageURL="/dove.jpg"
         />
+
         <Link
           href="/TeamBehind"
           className="flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg shadow-sm h-fit sm:hidden hover:border-primary bg-card"

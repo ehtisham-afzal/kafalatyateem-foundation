@@ -6,7 +6,7 @@ const page = () => {
   return (
     <main className="w-full min-h-[50dvh] space-y-14">
       <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl text-primary">
-        Services we provided
+        Services we providing
       </h1>
       <div className="flex flex-wrap items-center justify-between w-full gap-4">
         {ServicesAndFacilities.map(

@@ -35,9 +35,7 @@ const FeaturesAndServicesSection = () => {
           href="/Services"
           className="flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg shadow-sm h-fit sm:hidden hover:border-primary bg-card"
         >
-          <p className="text-muted-foreground">
-            Click here to see all Services & Facilities we providing
-          </p>
+          <p>Click here to see all Services & Facilities we providing</p>
         </Link>
       </div>
     </section>
