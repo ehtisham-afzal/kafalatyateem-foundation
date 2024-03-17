@@ -28,7 +28,7 @@ const FeaturesCard = ({
       )}
     >
       {IconName && <IconComponent className="pr-2 size-16 md:pr-0" />}
-      <CardHeader className="items-start py-2 md:items-center">
+      <CardHeader className="items-start px-4 py-2 md:items-center">
         <CardTitle className="text-lg font-normal md:text-2xl">
           {Title}
         </CardTitle>

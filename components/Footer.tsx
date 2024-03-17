@@ -16,7 +16,7 @@ const Footer = () => {
         />
         <div className="flex justify-between w-full p-8 md:gap-12 md:w-fit h-fit">
           <div className="w-fit">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">
+            <h2 className="mb-3 text-xl font-medium tracking-widest text-gray-900 title-font">
               Navigation
             </h2>
             <nav className="flex flex-col pr-3 mb-10">
@@ -24,7 +24,7 @@ const Footer = () => {
                 <Link
                   href={link.Link}
                   key={i}
-                  className="text-muted-foreground hover:text-gray-800"
+                  className="text-lg text-muted-foreground hover:text-gray-800"
                 >
                   {link.Name}
                 </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
             </nav>
           </div>
           <div className="w-fit">
-            <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 title-font">
+            <h2 className="mb-3 text-xl font-medium tracking-widest text-gray-900 title-font">
               Socials
             </h2>
             <nav className="flex flex-col pr-3 mb-10">
@@ -40,7 +40,7 @@ const Footer = () => {
                 <a
                   href={link.IdURL}
                   key={i}
-                  className="text-muted-foreground hover:text-gray-800"
+                  className="text-lg text-muted-foreground hover:text-gray-800"
                   target="__blank"
                 >
                   {link.Name}
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="py-3 text-sm text-center text-muted-foreground sm:text-left">
+      <p className="py-3 text-base text-center text-muted-foreground sm:text-left">
         © 2024 Kafalat e yateem foundation malakand All Rights Reserved |
         Designed and devoloped by
         <a
