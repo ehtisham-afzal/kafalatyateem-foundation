@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: "About",
 };
 
-const page = () => {
+type Props = {
+  params: {locale: string};
+};
+
+const page = ({params: {locale}}: Props) => {
   return (
     <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
       <h1>About us</h1>
