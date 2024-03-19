@@ -1,7 +1,7 @@
 import { NavLinks } from "@/lib/Data";
-import Link from "next/link";
 import React from "react";
 import DropDownMenuNav from "./DropDownMenuNav";
+import { Link } from "@/navigation";
 
 const NavBar = () => {
   return (

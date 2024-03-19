@@ -23,11 +23,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params: {locale}
+}: {
   children: React.ReactNode;
-}>) {
+  params: {locale: string};
+}) {
   return (
-    <html lang="en">
+    <html lang={locale} dir="ltr">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased flex justify-center text-primary ",
