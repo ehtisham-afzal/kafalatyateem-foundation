@@ -1,7 +1,13 @@
-import { BookText, School, IceCream2, Shirt, Moon } from "lucide-react"; // Import the icons you plan to use
+import { BookText, School, IceCream2, Shirt, Moon, } from "lucide-react"; // Import the icons you plan to use
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
-import { ServicesAndFacilitiesType } from "@/lib/Data";
 import { cn } from "@/lib/utils";
+
+ interface ServicesAndFacilitiesType {
+  Title: string,
+  IconName?: any,
+  Description: string,
+  className?: string
+}
 
 // Create a mapping of icon names to components
 const iconComponents = {
@@ -27,7 +33,7 @@ const FeaturesCard = ({
         className
       )}
     >
-      {IconName && <IconComponent className="pr-2 size-16 md:pr-0" />}
+      {IconName && <IconComponent className="pr-2 rtl:pl-2 rtl:md:pl-0 size-16 md:pr-0" />}
       <CardHeader className="items-start px-4 py-2 md:items-center">
         <CardTitle className="text-lg md:text-2xl">
           {Title}

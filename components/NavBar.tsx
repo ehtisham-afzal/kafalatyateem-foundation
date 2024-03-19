@@ -2,8 +2,10 @@ import { NavLinks } from "@/lib/Data";
 import React from "react";
 import DropDownMenuNav from "./DropDownMenuNav";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const NavBar = () => {
+  const t  = useTranslations("NavLinks")
   return (
     <nav className="flex items-center justify-between w-full h-16">
       <Link
@@ -19,7 +21,7 @@ const NavBar = () => {
             key={i}
             className="px-2 text-muted-foreground hover:text-gray-800 w-fit"
           >
-            {link.Name}
+            {t(link.Name)}
           </Link>
         ))}
       </div>

@@ -1,5 +1,89 @@
 {
   "Home": {
     "title": "Hello world!"
+  },
+  "NavLinks": {
+    "About": "Aboute us",
+    "Donate": "Donate",
+    "TeamBehind": "TeamBehin",
+    "Services": "Services",
+    "NavigationTitle": "Navigation",
+    "Socials": {
+      "NavigationTitle": "Socials",
+      "Facebook": "FaceBook",
+      "Youtube": "Youtube"
+    }
+  },
+  "HeroSection": {
+    "Title": "I and the one who takes care of an orphan will be in Paradise like this",
+    "SubTitle": "The Kafalate e Yateem Center Malakand is a home for orphans, abandoned children, and those in need. We provide them with a secure and loving environment where they can heal and grow. Our mission is to nurture young hearts with hope and compassion. Our center is a sanctuary where every child can thrive.",
+    "Buttons": {
+      "DonateNow": "Donate now",
+      "KnowAbouteUs": "Know about us"
+    }
+  },
+  "ServicesAndFacilitiesSection": {
+    "Title": "Services & Facilities we Providing",
+    "SeeAll": "See All",
+    "ReadMore": "Click here to see all Services & Facilities we providing"
+  },
+  "ServicesAndFacilities": {
+    "1": {
+      "Title": "Education",
+      "IconName": "BookText",
+      "Description": "Nursery to 10th class English Medium School."
+    },
+    "2": {
+      "Title": "Food",
+      "IconName": "IceCream2",
+      "Description": "Providing daily food."
+    },
+    "3": {
+      "Title": "Cloths",
+      "IconName": "Shirt",
+      "Description": "Provide annually two suit (i.e. school uniform)"
+    },
+    "4": {
+      "Title": "Shelter",
+      "IconName": "School",
+      "Description": "Accommodation twenty four hours in hostel"
+    },
+    "5": {
+      "Title": "Islamic Teaching",
+      "IconName": "Moon",
+      "Description": "Hifz & Tajweed, Islamic teachings."
+    },
+    "Title": "Services and facilities we providing"
+  },
+  "FooterRightsText": "© 2024 Kafalat e yateem foundation malakand All Rights Reserved | Designed and devoloped by",
+  "ehtisham-afzal": "Ehtisham Afzal",
+  "OrphansSection": {
+    "Title": "Orphans we have",
+    "Cards": {
+      "MaleFemale": "Male&Female",
+      "Male": "Male",
+      "Female": "Female"
+    }
+  },
+  "TeamBehindSection": {
+    "Title": "Meet the Team Behined",
+    "SeeAll": "See All",
+    "ReadMore": "Click here to see all team members"
+  },
+  "TeamBehind": {
+    "1": {
+      "Name": "Ehtisham Afzal",
+      "Role": "Presedent",
+      "ImageUrl": "/dove.jpg"
+    },
+    "Title": "Board of managment"
+  },
+  "Hadith": {
+    "Title": "The Prophet Muhammad (peace be upon him) said",
+    "Content": "“Whoever embraces an orphan of two Muslim parents by feeding him and giving him drink until he is independent of him, Paradise will certainly be necessary for him.”(Musnad Ahmad)"
+  },
+  "DonateNow": "Donate Now",
+  "About": {
+    "Title": "About us"
   }
 }

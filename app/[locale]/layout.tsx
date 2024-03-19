@@ -29,7 +29,7 @@ export default function RootLayout({
   params: {locale: string};
 }) {
   return (
-    <html lang={locale} dir="ltr">
+    <html lang={locale} dir={locale == "ar" ?"rtl" : "ltr"}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased flex justify-center text-primary ",

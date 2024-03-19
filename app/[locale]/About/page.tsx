@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -9,10 +10,11 @@ type Props = {
   params: {locale: string};
 };
 
-const page = ({params: {locale}}: Props) => {
+const Page = ({params: {locale}}: Props) => {
+  const t = useTranslations()
   return (
     <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
-      <h1>About us</h1>
+      <h1>{t('About.Title')}</h1>
       <h2>little bit About foundation</h2>
       <p>
         Esse labore consequat duis consequat laboris elit enim aliquip qui in
@@ -49,4 +51,4 @@ const page = ({params: {locale}}: Props) => {
   );
 };
 
-export default page;
+export default Page;
