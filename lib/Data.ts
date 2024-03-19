@@ -1,9 +1,3 @@
-export interface ServicesAndFacilitiesType {
-    Title: string,
-    IconName: "BookText" | "IceCream2" | "Shirt" | "School" | "Moon" | undefined,
-    Description: string,
-    className?: string
-}
 
 export const GalleryPhotos = [
     { src: "/kids.jpg", colSpan: 2, rowSpan: 2, alt: "Kids" },
@@ -14,13 +8,7 @@ export const GalleryPhotos = [
     { src: "/children.jpg", colSpan: 2, rowSpan: 2, alt: "Childrens" },
 ]
 
-export const ServicesAndFacilities: ServicesAndFacilitiesType[] = [
-    { Title: "Education", IconName: "BookText", Description: "Nursery to 10th class English Medium School." },
-    { Title: "Food", IconName: "IceCream2", Description: "Providing daily food." },
-    { Title: "Cloths", IconName: "Shirt", Description: "Provide annually two suit (i.e. school uniform)" },
-    { Title: "Shelter", IconName: "School", Description: "Accommodation twenty four hours in hostel" },
-    { Title: "Islamic Teaching", IconName: "Moon", Description: "Hifz & Tajweed, Islamic teachings." },
-]
+export const ServicesAndFacilities: string[] = ["1", "2", "3", "4", "5"]
 
 export const SocialLinks = [
     {
@@ -34,8 +22,36 @@ export const SocialLinks = [
 ];
 
 export const NavLinks = [
-    { Name: "Aboute us", Link: "/About" },
+    { Name: "About", Link: "/About" },
     { Name: "Donate", Link: "/Donate" },
     { Name: "TeamBehind", Link: "/TeamBehind" },
     { Name: "Services", Link: "/Services" },
+]
+
+
+export const ContactUs = {
+    Email: "XXXXXXXXXXXXXXXXXXXXXXX",
+    Phone: "0300-1234567",
+    Address: "Malakand, Pakistan",
+}
+
+export const ContactUsForm = {
+    Name: "Name",
+    Email: "Email",
+    Phone: "Phone",
+    Message: "Message",
+}
+
+export const DonateForm = {
+    Amount: "Amount",
+    Name: "Name",
+    Email: "Email",
+    Phone: "Phone",
+}
+
+export const DonateFormFields = [
+    { Name: "Amount", Type: "number" },
+    { Name: "Name", Type: "text" },
+    { Name: "Email", Type: "email" },
+    { Name: "Phone", Type: "tel" },
 ]
