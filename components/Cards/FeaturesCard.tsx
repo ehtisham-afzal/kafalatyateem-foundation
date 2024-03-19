@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
  interface ServicesAndFacilitiesType {
   Title: string,
-  IconName?: any,
+  IconName?: keyof typeof iconComponents,
   Description: string,
   className?: string
 }
