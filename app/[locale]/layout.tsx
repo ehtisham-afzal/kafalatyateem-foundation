@@ -29,15 +29,13 @@ export async function generateMetadata({ params: { locale } }: Params) {
 
   return {
     title: {
-      template: t('HomePage.title.template'),
-      default: t('HomePage.title.Defualt'),
+      template: t("HomePage.title.template"),
+      default: t("HomePage.title.Defualt"),
     },
-    description:
-      "The Kafalate e Yateem Foundation Malakand is NGO for Orphans and a home for orphans, abandoned children, and those in need. We provide them with a secure and loving environment where they can heal and grow. Our mission is to nurture young hearts with hope and compassion. Our center is a sanctuary where every child can thrive.",
+    description: t("Homepage.Description"),
     metadataBase: new URL("https://kafalatyateem.ehtisham.dev"),
   };
 }
-
 
 export default function RootLayout({
   children,
