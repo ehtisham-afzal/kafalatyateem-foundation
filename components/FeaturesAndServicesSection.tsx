@@ -27,7 +27,7 @@ const FeaturesAndServicesSection = () => {
               <FeaturesCard
                 className={`${index == 3 ? "sm:hidden xl:flex" : ""}`}
                 key={index}
-                IconName={t(`ServicesAndFacilities.${id}.IconName`)}
+                ImageUrl={t(`ServicesAndFacilities.${id}.ImageUrl`)}
                 Title={t(`ServicesAndFacilities.${id}.Title`)}
                 Description={t(`ServicesAndFacilities.${id}.Description`)}
               />
@@ -37,7 +37,7 @@ const FeaturesAndServicesSection = () => {
           href="/Services"
           className="flex items-center justify-center w-full p-4 overflow-hidden border rounded-lg shadow-sm h-fit sm:hidden hover:border-primary bg-card"
         >
-          <p>{t('ReadMore')}</p>
+          <p>{t('ServicesAndFacilitiesSection.ReadMore')}</p>
         </Link>
       </div>
     </section>

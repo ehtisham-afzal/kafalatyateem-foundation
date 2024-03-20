@@ -12,7 +12,8 @@
       "NavigationTitle": "اجتماعيات",
       "Facebook": "فيسبوك",
       "Youtube": "يوتيوب"
-    }
+    },
+    "Home": "بيت"
   },
   "HeroSection": {
     "Title": "أَنَا وَكَافِلُ الْيَتِيمِ فِي الْجَنَّةِ هَكَذَا",
@@ -30,27 +31,27 @@
   "ServicesAndFacilities": {
     "1": {
       "Title": "التعليم",
-      "IconName": "BookText",
+      "ImageUrl": "/Icons/BookText.svg",
       "Description": "مرحلة الروضة إلى الصف العاشر باللغة الإنجليزية."
     },
     "2": {
       "Title": "الطعام",
-      "IconName": "IceCream2",
+      "ImageUrl": "/Icons/IceCreamBowl.svg",
       "Description": "توفير الطعام اليومي."
     },
     "3": {
       "Title": "الملابس",
-      "IconName": "Shirt",
+      "ImageUrl": "/Icons/Shirt.svg",
       "Description": "توفير ملابس سنوية من نظيرين (أي ملبس المدرسة)."
     },
     "4": {
       "Title": "الإقامة",
-      "IconName": "School",
+      "ImageUrl": "/Icons/School.svg",
       "Description": "الإقامة متاحة 24 ساعة في الفندق."
     },
     "5": {
       "Title": "التعليم الإسلامي",
-      "IconName": "Moon",
+      "ImageUrl": "/Icons/MoonStar.svg",
       "Description": "الحفظ والتجويد، وتعليمات إسلامية."
     },
     "Title": "الخدمات والمرافق التي نقدمها"
