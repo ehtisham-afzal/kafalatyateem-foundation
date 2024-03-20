@@ -5,11 +5,18 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Separator } from "@/components/ui/separator";
+import { locales } from "@/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
+ 
+export function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
+}
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
   params: {locale: string};
 }) {
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale} dir={locale == "ar" ?"rtl" : "ltr"}>
       <body
