@@ -93,5 +93,22 @@
     "Language": "لغة",
     "SelectLanguage": "اختار اللغة",
     "Arbic": "العربية"
+  },
+  "Metadata": {
+    "HomePage": {
+      "title": {
+        "template": "%s | \nمؤسسة كفالات يتيم ملكاند",
+        "Defualt": "مؤسسة كفالات يتيم ملكان وهي منظمة غير حكومية للأيتام"
+      }
+    },
+    "AboutePage": {
+      "title": "معلومات عنا"
+    },
+    "SevicesPage": {
+      "title": "الخدمات التي نقدمها"
+    },
+    "TeamBehindPage": {
+      "title": "فريق خلف"
+    }
   }
 }
