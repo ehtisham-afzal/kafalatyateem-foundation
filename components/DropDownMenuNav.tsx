@@ -8,7 +8,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { NavLinks } from "@/lib/Data";
-import Link from "next/link";
+import {Link} from "@/navigation";
 import { useTranslations } from "next-intl";
 
 const DropDownMenuNav = () => {
