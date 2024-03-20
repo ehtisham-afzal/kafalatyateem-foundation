@@ -16,7 +16,7 @@ const Page = () => {
           <FeaturesCard
             className={`${index == 3 ? "sm:hidden xl:flex" : ""}`}
             key={index}
-            IconName={t(`ServicesAndFacilities.${id}.IconName`)}
+            ImageUrl={t(`ServicesAndFacilities.${id}.ImageUrl`)}
             Title={t(`ServicesAndFacilities.${id}.Title`)}
             Description={t(`ServicesAndFacilities.${id}.Description`)}
           />
@@ -25,7 +25,7 @@ const Page = () => {
           <FeaturesCard
             className={`${index == 3 ? "sm:hidden xl:flex" : ""}`}
             key={index}
-            IconName={t(`ServicesAndFacilities.${id}.IconName`)}
+            ImageUrl={t(`ServicesAndFacilities.${id}.ImageUrl`)}
             Title={t(`ServicesAndFacilities.${id}.Title`)}
             Description={t(`ServicesAndFacilities.${id}.Description`)}
           />
@@ -34,7 +34,7 @@ const Page = () => {
           <FeaturesCard
             className={`${index == 3 ? "sm:hidden xl:flex" : ""}`}
             key={index}
-            IconName={t(`ServicesAndFacilities.${id}.IconName`)}
+            ImageUrl={t(`ServicesAndFacilities.${id}.ImageUrl`)}
             Title={t(`ServicesAndFacilities.${id}.Title`)}
             Description={t(`ServicesAndFacilities.${id}.Description`)}
           />

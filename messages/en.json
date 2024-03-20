@@ -12,7 +12,8 @@
       "NavigationTitle": "Socials",
       "Facebook": "FaceBook",
       "Youtube": "Youtube"
-    }
+    },
+    "Home": "Home"
   },
   "HeroSection": {
     "Title": "I and the one who takes care of an orphan will be in Paradise like this",
@@ -30,27 +31,27 @@
   "ServicesAndFacilities": {
     "1": {
       "Title": "Education",
-      "IconName": "BookText",
+      "ImageUrl": "/Icons/BookText.svg",
       "Description": "Nursery to 10th class English Medium School."
     },
     "2": {
       "Title": "Food",
-      "IconName": "IceCream2",
+      "ImageUrl": "/Icons/IceCreamBowl.svg",
       "Description": "Providing daily food."
     },
     "3": {
       "Title": "Cloths",
-      "IconName": "Shirt",
+      "ImageUrl": "/Icons/Shirt.svg",
       "Description": "Provide annually two suit (i.e. school uniform)"
     },
     "4": {
       "Title": "Shelter",
-      "IconName": "School",
+      "ImageUrl": "/Icons/School.svg",
       "Description": "Accommodation twenty four hours in hostel"
     },
     "5": {
       "Title": "Islamic Teaching",
-      "IconName": "Moon",
+      "ImageUrl": "/Icons/MoonStar.svg",
       "Description": "Hifz & Tajweed, Islamic teachings."
     },
     "Title": "Services and facilities we providing"
