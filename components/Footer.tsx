@@ -1,7 +1,7 @@
 import { NavLinks, SocialLinks } from "@/lib/Data";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import {Link} from "@/navigation";
 import React from "react";
 
 const Footer = () => {

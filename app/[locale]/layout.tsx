@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang={locale} dir={locale == "ar" ?"rtl" : "ltr"}>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased flex justify-center text-primary ",
+          "min-h-screen bg-background font-sans antialiased flex justify-center ",
           fontSans.variable
         )}
       >
