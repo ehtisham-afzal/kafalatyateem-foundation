@@ -94,5 +94,22 @@
     "Language": "Language",
     "SelectLanguage": "Select Language",
     "Arbic": "العربية"
+  },
+  "Metadata": {
+    "HomePage": {
+      "title": {
+        "template": "%s | Kafalat e yateem foundation malakand",
+        "Defualt": "Kafalat e yateem foundation malakand NGO for Orphans"
+      }
+    },
+    "AboutePage": {
+      "title": "About us"
+    },
+    "SevicesPage": {
+      "title": "Services we Providing"
+    },
+    "TeamBehindPage": {
+      "title": "Team Behind"
+    }
   }
 }

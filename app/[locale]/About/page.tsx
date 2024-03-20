@@ -1,22 +1,21 @@
-import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
-import React from "react";
-
-export const metadata: Metadata = {
-  title: "About",
-};
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 type Props = {
-  params: {locale: string};
+  params: { locale: string };
 };
 
-const Page = ({params: {locale}}: Props) => {
-  unstable_setRequestLocale(locale)
-  const t = useTranslations()
+export async function generateMetadata({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  return { title: t("AboutePage.title") };
+}
+
+const Page = ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations();
   return (
     <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
-      <h1>{t('About.Title')}</h1>
+      <h1>{t("About.Title")}</h1>
       <h2>little bit About foundation</h2>
       <p>
         Esse labore consequat duis consequat laboris elit enim aliquip qui in

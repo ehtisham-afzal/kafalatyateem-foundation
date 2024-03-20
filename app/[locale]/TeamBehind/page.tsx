@@ -1,11 +1,16 @@
 import PersonCard from "@/components/Cards/PersonCard";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
 type Props = {
   params: {locale: string};
 };
+
+export async function generateMetadata({ params: { locale } }: Props) {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  return { title: t("TeamBehindPage.title") };
+}
 
 const Page = ({params: {locale}}: Props) => {
   unstable_setRequestLocale(locale)
