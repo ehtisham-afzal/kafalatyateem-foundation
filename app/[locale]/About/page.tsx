@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const Page = ({params: {locale}}: Props) => {
+  unstable_setRequestLocale(locale)
   const t = useTranslations()
   return (
     <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">

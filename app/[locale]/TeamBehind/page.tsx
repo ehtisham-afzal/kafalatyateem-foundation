@@ -1,8 +1,14 @@
 import PersonCard from "@/components/Cards/PersonCard";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
-const Page = () => {
+type Props = {
+  params: {locale: string};
+};
+
+const Page = ({params: {locale}}: Props) => {
+  unstable_setRequestLocale(locale)
   const t = useTranslations()
   return (
     <main className="w-full min-h-[50dvh] space-y-14">
