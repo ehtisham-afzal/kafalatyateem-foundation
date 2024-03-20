@@ -1,19 +1,20 @@
 import { NavLinks } from "@/lib/Data";
-import React from "react";
-import DropDownMenuNav from "./DropDownMenuNav";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import DropDownMenuNav from "./DropDownMenuNav";
+import LanguageSelector from "./LanguageSelector";
 
 const NavBar = () => {
-  const t  = useTranslations("NavLinks")
+  const t = useTranslations("NavLinks");
   return (
     <nav className="flex items-center justify-between w-full h-16">
-      <Link
-        href="/"
-        className="text-2xl font-semibold text-lime-500 scroll-m-20"
-      >
-        K Y F Malakand
-      </Link>
+        <Link
+          href="/"
+          className="text-2xl font-semibold text-lime-500 scroll-m-20"
+        >
+          K Y F Malakand
+        </Link>
+        <div className="flex gap-1">
       <div className="items-center justify-center hidden sm:flex ">
         {NavLinks.map((link, i) => (
           <Link
@@ -25,7 +26,8 @@ const NavBar = () => {
           </Link>
         ))}
       </div>
-      <DropDownMenuNav/>
+      <LanguageSelector />
+      <DropDownMenuNav /></div>
     </nav>
   );
 };
