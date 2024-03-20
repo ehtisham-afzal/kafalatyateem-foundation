@@ -22,7 +22,7 @@
       "DonateNow": "تبرع الآن",
       "KnowAbouteUs": "تعرف عنا"
     },
-    "TitleFirstWord": "قال محمد (ص).",
+    "TitleFirstWord": "قال النبي (ص).",
     "TitleLastWord": "وجمع إصبعيه السبابة والوسطى معًا."
   },
   "ServicesAndFacilitiesSection": {
@@ -88,5 +88,10 @@
   "DonateNow": "تبرع الآن",
   "About": {
     "Title": "معلومات عنا"
+  },
+  "ChangeLanguageDropdown": {
+    "Language": "لغة",
+    "SelectLanguage": "اختار اللغة",
+    "Arbic": "العربية"
   }
 }

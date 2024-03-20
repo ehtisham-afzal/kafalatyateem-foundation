@@ -22,7 +22,7 @@
       "DonateNow": "Donate now",
       "KnowAbouteUs": "Know about us"
     },
-    "TitleFirstWord": "Muhammad (S A W) said",
+    "TitleFirstWord": "Prophet (S A W) said",
     "TitleLastWord": "putting his index and middle fingers together."
   },
   "ServicesAndFacilitiesSection": {
@@ -88,5 +88,11 @@
   "DonateNow": "Donate Now",
   "About": {
     "Title": "About us"
+  },
+  "language": "Language",
+  "ChangeLanguageDropdown": {
+    "Language": "Language",
+    "SelectLanguage": "Select Language",
+    "Arbic": "العربية"
   }
 }

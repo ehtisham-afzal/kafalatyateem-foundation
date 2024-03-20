@@ -6,9 +6,9 @@ import { Button } from "./ui/button";
 const Hero = () => {
   const t = useTranslations("HeroSection");
   return (
-    <section className="flex relative flex-col items-center rtl:min-h-[90dvh] justify-start py-1 mx-auto sm:min-h-[90dvh] sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
+    <section className="flex relative flex-col items-center rtl:min-h-[80vh] justify-start py-1 mx-auto sm:min-h-[90vh] sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
       <Image
-        className="object-cover object-center h-screen w-auto absolute -z-10 opacity-40"
+        className="object-cover object-center h-screen w-auto absolute -z-10 opacity-25"
         alt="hero"
         height={500}
         width={500}

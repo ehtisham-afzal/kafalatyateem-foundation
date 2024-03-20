@@ -8,23 +8,28 @@ import {
 } from "./ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { NavLinks } from "@/lib/Data";
-import {Link} from "@/navigation";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import { Button } from "./ui/button";
 
 const DropDownMenuNav = () => {
-  const t = useTranslations("NavLinks")
+  const t = useTranslations("NavLinks");
   return (
-    <div className="pt-2 sm:hidden">
+    <div className=" sm:hidden flex items-center">
       <DropdownMenu>
-        <DropdownMenuTrigger>
-          <Menu />
-          <p className="sr-only">Menus</p>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" className="p-1">
+            <Menu />
+            <p className="sr-only">Menus</p>
+          </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel className="text-xl">Go to</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <Link href="/">
-            <DropdownMenuItem className="pr-16 text-lg">{t('Home')}</DropdownMenuItem>
+            <DropdownMenuItem className="pr-16 text-lg">
+              {t("Home")}
+            </DropdownMenuItem>
           </Link>
           {NavLinks.map((link, i) => (
             <Link key={i} href={link.Link}>
