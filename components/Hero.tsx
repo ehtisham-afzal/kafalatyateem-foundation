@@ -1,24 +1,26 @@
-import Image from "next/image";
-import React from "react";
-import { Button } from "./ui/button";
-import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Hero = () => {
   const t = useTranslations("HeroSection");
   return (
-    <section className="flex flex-col items-center justify-start py-1 mx-auto md:min-h-[90dvh] sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
+    <section className="flex relative flex-col items-center rtl:min-h-[90dvh] justify-start py-1 mx-auto sm:min-h-[90dvh] sm:py-8 sm:justify-center sm:px-5 sm:container text-start sm:text-center">
       <Image
-        className="object-cover object-center w-4/5 mb-10 rounded lg:w-2/6 md:w-3/6"
+        className="object-cover object-center h-screen w-auto absolute -z-10 opacity-40"
         alt="hero"
         height={500}
         width={500}
-        src="/Hadith.png"
+        src="/HeroSectionIllustration.png"
       />
       <div className="w-full lg:w-2/3">
-        <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl text-primary">
-          {t("Title")}
-        </h1>
+          <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl">
+          <span className="text-muted-foreground pr-2">
+            {t("TitleFirstWord")}
+          </span>
+            {t("Title")}
+          </h1>
         <p className="mb-8 text-2xl font-semibold leading-relaxed scroll-m-20 text-muted-foreground">
           {t("SubTitle")}
         </p>

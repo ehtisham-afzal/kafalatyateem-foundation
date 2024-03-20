@@ -16,12 +16,14 @@
     "Home": "Home"
   },
   "HeroSection": {
-    "Title": "I and the one who takes care of an orphan will be in Paradise like this",
+    "Title": "I and the one who takes care of an orphan will be in Paradise like this ✌🏿",
     "SubTitle": "The Kafalate e Yateem Center Malakand is a home for orphans, abandoned children, and those in need. We provide them with a secure and loving environment where they can heal and grow. Our mission is to nurture young hearts with hope and compassion. Our center is a sanctuary where every child can thrive.",
     "Buttons": {
       "DonateNow": "Donate now",
       "KnowAbouteUs": "Know about us"
-    }
+    },
+    "TitleFirstWord": "Muhammad (S A W) said",
+    "TitleLastWord": "putting his index and middle fingers together."
   },
   "ServicesAndFacilitiesSection": {
     "Title": "Services & Facilities we Providing",
