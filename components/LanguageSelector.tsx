@@ -1,20 +1,18 @@
 import { Languages } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import LanguageSelectorMenu from "./LanguageSelectorMenu";
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "./ui/dropdown-menu";
-import LanguageSelectorMenu from "./LanguageSelectorMenu";
 
 const LocalsMenus = [
   { local: "en", name: "English" },
-  { local: "ar", name: "Arbic" },
+  { local: "ar", name: "العربية"},
 ];
 
 const LanguageSelector = () => {
@@ -23,7 +21,7 @@ const LanguageSelector = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="p-1">
-          <p className="px-2 text-base">{t("Language")}</p>
+          <p className="px-2 text-base sm:text-muted-foreground">{t("Language")}</p>
           <Languages />
         </Button>
       </DropdownMenuTrigger>

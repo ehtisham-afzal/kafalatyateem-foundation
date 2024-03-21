@@ -15,7 +15,7 @@ import { Button } from "./ui/button";
 const DropDownMenuNav = () => {
   const t = useTranslations("NavLinks");
   return (
-    <div className=" sm:hidden flex items-center">
+    <div className="flex items-center  sm:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="p-1">
