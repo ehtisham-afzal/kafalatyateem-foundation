@@ -3,13 +3,19 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import LanguageSelectorMenu from "./LanguageSelectorMenu";
+
+const LocalsMenus = [
+  { local: "en", name: "English" },
+  { local: "ar", name: "Arbic" },
+];
 
 const LanguageSelector = () => {
   const t = useTranslations("ChangeLanguageDropdown");
@@ -24,16 +30,7 @@ const LanguageSelector = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>{t("SelectLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link locale="en" href="/en">
-            English
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link locale="ar" href="/ar">
-            {t("Arbic")}
-          </Link>
-        </DropdownMenuItem>
+        <LanguageSelectorMenu Languages={LocalsMenus} />
       </DropdownMenuContent>
     </DropdownMenu>
   );
