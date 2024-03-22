@@ -17,9 +17,9 @@ const Page = ({params: {locale}}: Props) => {
   const t = useTranslations()
   return (
     <main className="w-full min-h-[50dvh] space-y-14">
-      <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl text-primary">
+      <h2 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         {t('TeamBehind.Title')}
-      </h1>
+      </h2>
       <div className="flex flex-wrap items-center justify-between gap-4">
         {Array(25)
           .fill(0)

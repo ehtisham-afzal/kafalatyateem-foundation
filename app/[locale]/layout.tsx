@@ -53,7 +53,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <main className="max-w-[1400px] px-3 space-y-8 sm:px-8 md:px-10 lg:px-32">
+        <main className="max-w-[1400px] px-3 space-y-8 sm:px-8 md:px-10 lg:px-32 ">
           <NavBar />
           {children}
           <Separator />

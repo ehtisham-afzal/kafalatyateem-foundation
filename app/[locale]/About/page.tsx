@@ -15,8 +15,7 @@ const Page = ({ params: { locale } }: Props) => {
   const t = useTranslations();
   return (
     <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
-      <h1>{t("About.Title")}</h1>
-      <h2>little bit About foundation</h2>
+      <h2>{t("About.Title")}</h2>
       <p>
         Esse labore consequat duis consequat laboris elit enim aliquip qui in
         Lorem exercitation laboris. Reprehenderit cillum exercitation in laborum

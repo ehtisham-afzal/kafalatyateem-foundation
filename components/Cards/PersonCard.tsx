@@ -13,7 +13,7 @@ const PersonCard = ({
   return (
     <Card className="flex w-full gap-1 p-2 overflow-hidden text-center md:p-0 md:flex-col md:justify-center md:items-center md:w-48 md:h-64 md:gap-5 hover:border-primary">
       <Image
-        className="object-cover w-16 h-16 rounded-full md:w-40 md:h-40 "
+        className="object-cover size-14 rounded-full md:w-40 md:h-40 "
         width={100}
         height={100}
         alt={Name}
