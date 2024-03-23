@@ -123,6 +123,9 @@
     }
   },
   "DonatePage": {
-    "Title": "Donate"
+    "Title": "Donate",
+    "BlankPage-p": "Select one of Payment Method first",
+    "PaymentMethods": "Payment Methods",
+    "SelectPaymentMethod": "Select one the following payment method to donate"
   }
 }

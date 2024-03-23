@@ -123,6 +123,9 @@
   },
   "language": "لغة",
   "DonatePage": {
-    "Title": "يتبرع"
+    "Title": "يتبرع",
+    "BlankPage-p": "اختر إحدى طرق الدفع أولاً",
+    "PaymentMethods": "طرق الدفع",
+    "SelectPaymentMethod": "اختر إحدى طرق الدفع التالية للتبرع"
   }
 }

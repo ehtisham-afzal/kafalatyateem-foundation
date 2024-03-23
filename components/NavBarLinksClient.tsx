@@ -20,7 +20,7 @@ const NavBarLinksClient = ({ Links }: linksProsps) => {
           href={link.Link}
           key={i}
           className={cn(
-            "px-2 hover:text-gray-800 w-fit",
+            "px-2 hover:text-gray-800 w-fit hover:underline",
             pathName.slice(3) == link.Link ? "text-primary hover:text-primary" : "text-muted-foreground"
           )}
         >

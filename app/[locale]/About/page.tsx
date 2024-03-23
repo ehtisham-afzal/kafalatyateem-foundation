@@ -14,7 +14,7 @@ const Page = ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
   return (
-    <main className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
+    <section className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
       <h2>{t("About.Title")}</h2>
       <p>
         Esse labore consequat duis consequat laboris elit enim aliquip qui in
@@ -47,7 +47,7 @@ const Page = ({ params: { locale } }: Props) => {
         ullamco. Officia do velit aliquip tempor do ex eu nisi ut ex fugiat
         officia deserunt.
       </p>
-    </main>
+    </section>
   );
 };
 
