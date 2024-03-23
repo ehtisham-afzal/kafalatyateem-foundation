@@ -28,7 +28,11 @@
   "ServicesAndFacilitiesSection": {
     "Title": "Services & Facilities we Providing",
     "SeeAll": "See All",
-    "ReadMore": "Click here to see all Services & Facilities we providing"
+    "ReadMore": "Click here to see all Services & Facilities we providing",
+    "TableHeader": {
+      "Facility": "Facility",
+      "Description": "Description"
+    }
   },
   "ServicesAndFacilities": {
     "1": {
@@ -113,6 +117,15 @@
     },
     "Homepage": {
       "Description": "The Kafalate e Yateem Foundation Malakand is NGO for Orphans and a home for orphans, abandoned children, and those in need. We provide them with a secure and loving environment where they can heal and grow. Our mission is to nurture young hearts with hope and compassion. Our center is a sanctuary where every child can thrive."
+    },
+    "DonatePage": {
+      "title": "Donate Now"
     }
+  },
+  "DonatePage": {
+    "Title": "Donate",
+    "BlankPage-p": "Select one of Payment Method first",
+    "PaymentMethods": "Payment Methods",
+    "SelectPaymentMethod": "Select one the following payment method to donate"
   }
 }

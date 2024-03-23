@@ -32,7 +32,7 @@ const FeaturesCard = ({
           src={ImageUrl}
         />
       )}
-      <CardHeader className="items-start px-4 py-2 md:items-center">
+      <CardHeader className="items-start px-4 py-2 sm:items-center sm:text-center">
         <CardTitle className="text-lg md:text-2xl">{Title}</CardTitle>
         <CardDescription>{Description}</CardDescription>
       </CardHeader>
