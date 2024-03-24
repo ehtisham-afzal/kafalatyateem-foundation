@@ -21,7 +21,7 @@ const DonatePageLayoute = ({ params: { locale }, children }: Props) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
   return (
-    <section className="w-full min-h-[50dvh] space-y-14">
+    <section className="w-full min-h-[50dvh] space-y-14 max-w-[52.5rem]">
       <h2 className="pb-2 mb-4 text-3xl font-semibold tracking-tight border-b scroll-m-20 first:mt-0">
         {t("DonatePage.Title")}
       </h2>
