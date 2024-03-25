@@ -19,7 +19,7 @@ const Hero2 = () => {
         />
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
-            <h1 className="mb-4 text-4xl font-extrabold text-gray-900 title-font sm:text-5xl">
+            <h1 className="mb-4 text-4xl font-extrabold text-transparent title-font sm:text-5xl bg-clip-text bg-gradient-to-r from-primary to-lime-500">
               Kafalat e yateem foundation
             </h1>
             <p className="mb-8 text-lg font-semibold leading-relaxed scroll-m-20 text-muted-foreground">

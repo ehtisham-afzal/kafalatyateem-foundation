@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="flex items-center justify-between w-full h-16">
       <Link
         href="/"
-        className="text-2xl font-semibold text-lime-500 scroll-m-20"
+        className="text-2xl font-semibold text-primary scroll-m-20"
       >
         K Y F Malakand
       </Link>
