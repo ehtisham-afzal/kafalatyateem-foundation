@@ -1,5 +1,7 @@
 import NavLinks from "@/components/DonatePage/NavLinks";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { locales } from "@/navigation";
+import { TriangleAlertIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
@@ -22,6 +24,14 @@ const DonatePageLayoute = ({ params: { locale }, children }: Props) => {
   const t = useTranslations();
   return (
     <section className="w-full min-h-[50dvh] space-y-14 max-w-[52.5rem]">
+      <Alert variant="destructive">
+        <TriangleAlertIcon className="size-4" />
+        <AlertTitle>Here Pleas!</AlertTitle>
+        <AlertDescription>
+          This page is under heavy construction🚧 and not ready yet
+        </AlertDescription>
+      </Alert>
+
       <h2 className="pb-2 mb-4 text-3xl font-semibold tracking-tight border-b scroll-m-20 first:mt-0">
         {t("DonatePage.Title")}
       </h2>
