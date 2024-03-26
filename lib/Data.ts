@@ -39,7 +39,7 @@ export const TeamBehind = [
         "CNIC": "15402-8547292-5",
         "Cell#": "0349-1456403",
         "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil  Batkhela",
-        "ImageUrl": "/TeamMembersImages/attaullah.jpeg"
+        // "ImageUrl": "/TeamMembersImages/attaullah.jpeg"
     },
     {
         "Name": "Tahir Hussain",

@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Card, CardFooter } from "../ui/card";
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Card, CardFooter } from "../ui/card";
 
 const PersonCard = ({
   Name,
@@ -21,18 +20,19 @@ const PersonCard = ({
         className
       )}
     >
-      <Avatar className="object-cover rounded-full size-14 sm:size-40 ">
-        <AvatarImage className="object-cover" width={100} height={100} alt={Name} src={ImageURL} />
-        <AvatarFallback className="sm:text-4xl">{Name.toUpperCase().substring(0, 2)}</AvatarFallback>
-      </Avatar>
-
-      {/* <Image
-        className="object-cover rounded-full size-14 sm:size-40 "
-        width={100}
-        height={100}
-        alt={Name}
-        src={ImageURL}
-      /> */}
+      {ImageURL ? (
+        <Image
+          className="object-cover bg-gray-100 rounded-full size-14 sm:size-40"
+          width={100}
+          height={100}
+          alt={Name}
+          src={ImageURL}
+        />
+      ) : (
+        <span className="flex items-center justify-center bg-gray-100 rounded-full sm:text-4xl size-14 sm:size-40">
+          {Name.toUpperCase().substring(0, 2)}
+        </span>
+      )}
       <CardFooter className="flex flex-col items-start px-3 py-0 h-fit sm:px-6 sm:items-center">
         <h4 className="text-lg font-semibold h-fit">{Name}</h4>
         <p className="text-muted-foreground">{Description}</p>
