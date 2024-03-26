@@ -19,7 +19,7 @@ export const TeamBehind = [
         "CNIC": "15402-9430988-3 ",
         "Cell#": "0344-5003115",
         "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil Batkhela District  Malakand",
-        "ImageUrl": "/TeamMembersImages/muhammadiftikhar.webp"
+        "ImageUrl": "/TeamMembersImages/MuhammadIftikhar.webp"
     },
     {
         "Name": "Abdullah",
@@ -29,7 +29,7 @@ export const TeamBehind = [
         "CNIC": "15402-2033870-5",
         "Cell#": "0337-6153472",
         "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil  Batkhela District  Malakand",
-        "ImageUrl": "/TeamMembersImages/abdullah.webp"
+        "ImageUrl": "/TeamMembersImages/ABDULLAH.webp"
     },
     {
         "Name": "Atta Ullah ",
@@ -49,7 +49,7 @@ export const TeamBehind = [
         "CNIC": "15402-7332086-7",
         "Cell#": "0342-1947673",
         "Address": "Mohalla Fazal Abad Dheri Alladhand Tehsil Batkhela    District Malakand",
-        "ImageUrl": "/TeamMembersImages/tahirhussain.webp"
+        "ImageUrl": "/TeamMembersImages/Tahirhussain.webp"
     },
     {
         "Name": "Shahzad Muhammad ",
@@ -59,7 +59,7 @@ export const TeamBehind = [
         "CNIC": "15402-9875532-9",
         "Cell#": "0342-3877556",
         "Address": "Mohalla malak Abad Koto Dheri Alladhand Tehsil  Batkhela District Malakand",
-        "ImageUrl": "/TeamMembersImages/shahzadmuhammad.webp"
+        "ImageUrl": "/TeamMembersImages/Shahzadmuhammad.webp"
     },
     {
         "Name": "Muhammad Nuaman ",
@@ -69,7 +69,7 @@ export const TeamBehind = [
         "CNIC": "15402-1448881-7",
         "Cell#": "0334-1912250",
         "Address": "Mohalla Lahore Khel Dheri Alladhand Tehsil ,Batkhela DistrictMalakand",
-        "ImageUrl": "/TeamMembersImages/muhammadnuaman.webp"
+        "ImageUrl": "/TeamMembersImages/Muhammadnuaman.webp"
     },
     {
         "Name": "Ishtiyaq Ahmad",
@@ -79,7 +79,7 @@ export const TeamBehind = [
         "CNIC": "15402-9191248-9",
         "Cell#": "0344-6289724",
         "Address": "Mohalla Nazar Ali Khel Dheri Alladhand Tehsil Batkhela District Malakand",
-        "ImageUrl": "/TeamMembersImages/ishtiyaqahmad.webp"
+        "ImageUrl": "/TeamMembersImages/Ishtiyaqahmad.webp"
     }
 ]
 
