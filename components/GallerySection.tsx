@@ -10,7 +10,7 @@ const GallerySection = () => {
         Gallery
       </h2> */}
 
-      <div className=" w-full h-[90vh]  md:h-96 xl:h-[30rem] gap-2 grid grid-cols-2 md:grid-cols-4 md:row-span-2">
+      <div className=" w-full h-[90vh]  md:h-[26rem] xl:h-[34rem] gap-2 grid grid-cols-2 md:grid-cols-4 md:row-span-2">
         {GalleryPhotos.map(({ src, alt, colSpan }, i) => (
           <Image
             className={cn(

@@ -7,7 +7,7 @@ import { Link } from "@/navigation";
 const CTA = () => {
   const t = useTranslations();
   return (
-    <div className="relative flex flex-col items-center justify-center w-full gap-4 p-4 overflow-hidden text-center rounded-lg h-fit bg-lime-50">
+    <div className="relative flex flex-col items-center justify-center w-full gap-4 p-4 overflow-hidden text-center rounded-lg text-secondary h-fit bg-gradient-to-t from-primary to-gray-900">
       <Image
         width={130}
         height={130}
@@ -28,7 +28,7 @@ const CTA = () => {
       <p className="text-wrap italic text-start w-full md:w-[30rem] ">
         {t("Hadith.Content")}
       </p>
-      <Button className="w-full md:w-fit" asChild>
+      <Button className="w-full md:w-fit" variant="secondary" asChild>
         <Link href="/Donate">{t('DonateNow')}</Link>
       </Button>
     </div>
