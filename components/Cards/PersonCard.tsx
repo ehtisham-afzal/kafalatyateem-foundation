@@ -20,7 +20,7 @@ const PersonCard = ({
         className
       )}
     >
-      {typeof ImageURL === "string" ? (
+      {ImageURL ? (
         <Image
           className="object-cover bg-gray-100 rounded-full size-14 sm:size-40"
           width={100}
