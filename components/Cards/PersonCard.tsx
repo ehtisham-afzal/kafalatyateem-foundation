@@ -20,19 +20,13 @@ const PersonCard = ({
         className
       )}
     >
-      {ImageURL ? (
-        <Image
-          className="object-cover bg-gray-100 rounded-full size-14 sm:size-40"
-          width={100}
-          height={100}
-          alt={Name}
-          src={ImageURL}
-        />
-      ) : (
-        <span className="flex items-center justify-center bg-gray-100 rounded-full sm:text-4xl size-14 sm:size-40">
-          {Name.toUpperCase().substring(0, 2)}
-        </span>
-      )}
+      <Image
+        className="object-cover bg-gray-100 rounded-full size-14 sm:size-40"
+        width={100}
+        height={100}
+        alt={Name}
+        src={ImageURL}
+      />
       <CardFooter className="flex flex-col items-start px-3 py-0 h-fit sm:px-6 sm:items-center">
         <h4 className="text-lg font-semibold h-fit">{Name}</h4>
         <p className="text-muted-foreground">{Description}</p>
