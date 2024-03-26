@@ -2,6 +2,7 @@ import PersonCard from "./Cards/PersonCard";
 import { Link } from "../navigation";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { TeamBehind } from "@/lib/Data";
 
 const TeamBehindSection = () => {
   const t = useTranslations();
@@ -21,15 +22,18 @@ const TeamBehindSection = () => {
       </div>
 
       <div className="flex flex-wrap items-center justify-between w-full gap-4 pb-8">
-        {Array.from({ length: 4 }).map((_, index) => (
-          <PersonCard
-            className={index === 3 ? "md:hidden lg:flex" : ""}
-            key={index}
-            Name={t("TeamBehind.1.Name")}
-            Description={t("TeamBehind.1.Role")}
-            ImageURL={t("TeamBehind.1.ImageUrl")}
-          />
-        ))}
+        {TeamBehind.map(
+          (member, index) =>
+            index < 4 && (
+              <PersonCard
+                className={index === 3 ? "md:hidden lg:flex" : ""}
+                key={member.Name}
+                Name={member.Name}
+                Description={member.Designation}
+                ImageURL={member.ImageUrl}
+              />
+            )
+        )}
 
         <Link
           href="/TeamBehind"
