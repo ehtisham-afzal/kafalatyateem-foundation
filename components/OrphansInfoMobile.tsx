@@ -3,7 +3,7 @@ import { Separator } from "./ui/separator";
 
 const OrphansInfoMobile = () => {
   return (
-    <div className="flex items-center h-36 sm:hidden">
+    <div className="flex items-center h-36 sm:hidden justify-between w-full">
       <div className="flex flex-col items-center justify-center gap-2 text-center text-card-foreground">
         <Users className="size-8" />
         <div className="flex flex-col space-y-1.5 p-6 h-fit py-0">
