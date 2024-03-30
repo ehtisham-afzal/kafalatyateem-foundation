@@ -39,7 +39,7 @@ export const TeamBehind = [
         "CNIC": "15402-8547292-5",
         "PhoneNo": "0349-1456403",
         "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil  Batkhela",
-        "ImageUrl": "/TeamMembersImages/attaullah.webp"
+        "ImageUrl": "/TeamMembersImages/AttaUllah.jpeg"
     },
     {
         "Name": "Tahir Hussain",
@@ -92,14 +92,14 @@ export const TeamBehind = [
         "ImageUrl": "/TeamMembersImages/Ehtisham.png"
     },
     {
-        "Name": "Waheed Mahmood",
-        "FName": "Fazal Mahmood ",
+        "Name": "M Muneer",
+        "FName": "Muhammad Shafi",
         "Designation": "Member",
         "GroupMember": "General Body Member",
-        "CNIC": "15402 – 3452498 - 3",
-        "PhoneNo": "0346 - 6365705",
-        "Address": "Mohalla Gull Baba Dheri Alladhand Tehsil ,Batkhela DistrictMalakand",
-        "ImageUrl": "/TeamMembersImages/attaullah.jpeg"
+        "CNIC": "15402 – 9685535 - 7",
+        "PhoneNo": "0347 -  6769736",
+        "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil  Batkhela District  Malakand",
+        "ImageUrl": "/TeamMembersImages/Muneer.jpeg"
     },
     {
         "Name": "Tahseen Ullah ",
@@ -119,7 +119,7 @@ export const TeamBehind = [
         "CNIC": "15402 – 8198630 - 9",
         "PhoneNo": "0340  - 4006558",
         "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil Batkhela District Malakand ",
-        "ImageUrl": "/TeamMembersImages/waqaskhan.jpeg"
+        "ImageUrl": "/TeamMembersImages/waqas.jpeg"
     },
     {
         "Name": "Waqar Ahmad ",
@@ -129,7 +129,17 @@ export const TeamBehind = [
         "CNIC": "15402 – 1685838 - 3",
         "PhoneNo": "0348  -  9613903",
         "Address": "Mohalla Shalmani  Dheri Alladhand Tehsil  Batkhela District  Malakand",
-        "ImageUrl": "/TeamMembersImages/waqarahmad.jpeg"
+        "ImageUrl": "/TeamMembersImages/waqar.jpeg"
+    },
+    {
+        "Name": "Waheed Mahmood",
+        "FName": "Fazal Mahmood ",
+        "Designation": "Member",
+        "GroupMember": "General Body Member",
+        "CNIC": "15402 – 3452498 - 3",
+        "PhoneNo": "0346 - 6365705",
+        "Address": "Mohalla Gull Baba Dheri Alladhand Tehsil ,Batkhela DistrictMalakand",
+        "ImageUrl": "/TeamMembersImages/waheed.jpeg"
     },
     {
         "Name": "Noor Hayat",
@@ -140,16 +150,6 @@ export const TeamBehind = [
         "PhoneNo": "0342 -  9684860",
         "Address": "Mohalla Shalmani  Dheri Alladhand Tehsil  Batkhela District  Malakand",
         "ImageUrl": "/TeamMembersImages/Noorhayat.jpeg"
-    },
-    {
-        "Name": "M Muneer",
-        "FName": "Muhammad Shafi",
-        "Designation": "Member",
-        "GroupMember": "General Body Member",
-        "CNIC": "15402 – 9685535 - 7",
-        "PhoneNo": "0347 -  6769736",
-        "Address": "Mohalla Khan Pallu Dheri Alladhand Tehsil  Batkhela District  Malakand",
-        "ImageUrl": "/TeamMembersImages/Muhammadmuneer.jpeg"
     },
     {
         "Name": "Juma Syed ",
