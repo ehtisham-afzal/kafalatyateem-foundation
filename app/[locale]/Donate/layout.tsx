@@ -1,9 +1,10 @@
 import NavLinks from "@/components/DonatePage/NavLinks";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { locales } from "@/navigation";
-import { TriangleAlertIcon } from "lucide-react";
+import { Loader2, TriangleAlertIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -48,7 +49,15 @@ const DonatePageLayoute = ({ params: { locale }, children }: Props) => {
           className="flex items-center justify-center w-full border-t-2 min-h-96"
           dir="ltr"
         >
-          {children}
+          <Suspense
+            fallback={
+              <div className="text-center text-gray-500 flex justify-center items-center w-full">
+                <Loader2 className="size-10 animate-spin" />
+              </div>
+            }
+          >
+            {children}
+          </Suspense>
         </div>
       </div>
     </section>

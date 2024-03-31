@@ -17,8 +17,8 @@ const Page = () => {
         return <BankAccountDetailsCard key={i} AccountDetails={ac} />;
       })}
       {filterBankAccounts.length === 0 && (
-        <div className="text-center text-gray-500 mx-auto w-full">
-          Please select right payment method
+        <div className="text-center text-gray-500 flex justify-center items-center w-full">
+         <p> Please select right payment method</p>
         </div>
       )}
     </div>
