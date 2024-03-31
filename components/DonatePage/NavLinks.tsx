@@ -2,8 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/navigation";
-import { CreditCard } from "lucide-react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 
 const links = [
@@ -13,7 +11,7 @@ const links = [
     iconUrl: "/Icons/CreditCard.svg",
   },
   {
-    name: "Direct bank transfer",
+    name: "via bank transfer",
     href: "/Donate/DirectBankTransfer",
     iconUrl: "/Icons/SmartPhone.svg",
   },
