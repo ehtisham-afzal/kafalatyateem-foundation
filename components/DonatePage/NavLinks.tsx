@@ -16,7 +16,11 @@ const links = [
     iconUrl: "/Icons/SmartPhone.svg",
   },
   { name: "Paypal", href: "/Donate/Paypal", iconUrl: "/Icons/Paypal.svg" },
-  { name: "Easypaise / Jazzcash", href: "/Donate/MicroFinance", iconUrl: "/Icons/SmartPhone.svg" },
+  {
+    name: "Easypaise / Jazzcash",
+    href: "/Donate/MicroFinance",
+    iconUrl: "/Icons/SmartPhone.svg",
+  },
 ];
 
 export default function NavLinks() {
@@ -32,7 +36,7 @@ export default function NavLinks() {
             key={link.name}
             className={cn(
               "whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-background hover:bg-accent hover:text-accent-foreground flex flex-col items-center justify-center p-4 space-y-2 border rounded-md h-full min-w-20",
-              pathname === link.href ? "border-primary bg-accent" : ""
+              pathname === link.href ? "border-primary bg-accent" : "",
             )}
             href={link.href}
           >

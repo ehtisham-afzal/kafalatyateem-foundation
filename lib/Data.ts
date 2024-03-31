@@ -204,29 +204,34 @@ export const NavLinks = [
 ]
 
 
-export const ContactUs = {
-    Email: "XXXXXXXXXXXXXXXXXXXXXXX",
-    Phone: "0300-1234567",
-    Address: "Malakand, Pakistan",
-}
-
-export const ContactUsForm = {
-    Name: "Name",
-    Email: "Email",
-    Phone: "Phone",
-    Message: "Message",
-}
-
-export const DonateForm = {
-    Amount: "Amount",
-    Name: "Name",
-    Email: "Email",
-    Phone: "Phone",
-}
-
-export const DonateFormFields = [
-    { Name: "Amount", Type: "number" },
-    { Name: "Name", Type: "text" },
-    { Name: "Email", Type: "email" },
-    { Name: "Phone", Type: "tel" },
-]
+export const BankAccounts = [
+    {
+        AccountName: "Kafalat Yateem Foudation",
+        BankName: "Bank Alfalah",
+        AccountNo: "8298923808",
+        IBANNo: "493834",
+        SWIFTCode: "3434",
+        BranchCode: "43434",
+        BranchName: "Batkhela",
+        type: "normal",
+        currencySupport: "PKR",
+    },
+    {
+        AccountName: "Kafalat Yateem Foudation",
+        BankName: "Meezan Bank",
+        AccountNo: "8298923808",
+        IBANNo: "4938fer34",
+        SWIFTCode: "3cvd32434",
+        BranchCode: "4344334",
+        BranchName: "Batkhela",
+        type: "normal",
+        currencySupport: "PKR",
+    },
+    {
+        AccountName: "Kafalat Yateem Foudation",
+        BankName: "EasyPaisa",
+        AccountNo: "8298923808",
+        type: "microFinance",
+        currencySupport: "PKR",
+    },
+];
