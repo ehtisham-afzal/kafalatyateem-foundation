@@ -7,7 +7,7 @@ export const donate = pgTable("donate", {
     email: text("email").notNull(),
     date: timestamp("date").defaultNow(),
     payment_method: text("payment_method").notNull(),
-    phone: integer("phone"),
+    phone: text("phone"),
     country: text("country"),
     city: text("city"),
     address: text("address")
