@@ -74,5 +74,5 @@ export const donateForm = async (prevState: donateFormState | undefined, formDat
 
 
     // Revalidate the cache for the invoices page and redirect the user.
-    redirect(payment_method === "directBankTransfer" ? '/Donate/BankAccounts?type=normal&currencySupport=PKR' : "/Donate");
+    redirect(payment_method === "directBankTransfer" ? '/Donate/BankAccounts?type=normal&currencySupport=PKR' : payment_method === "easyPaise/jazzCash" ? "/Donate/BankAccounts?type=microFinance&currencySupport=PKR" : "/Donate");
 }
