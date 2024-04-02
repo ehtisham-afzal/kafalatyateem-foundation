@@ -66,31 +66,31 @@ const BankAccountDetailsCard = ({
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full bg-green-500" variant="secondary">
-          <a
+          <a target="__blank"
             href={`https://wa.me/?text=*DONATION%20ACCOUNT*%0a%0AAccount+Title%3A+%0A%2A${
               AccountDetails.AccountName
             }%2A%0A%09%09%09%09%09%09%09%09%0A${
               AccountDetails.BankName
-                ? "Bank+Name%3A+%0A%2A" + AccountDetails.BankName
+                ? "Bank+Name%3A+%0A%2A" + AccountDetails.BankName + "%2A"
+                : ""
+            }${
+              AccountDetails.AccountNo
+                ? "%0A%09%09%09%09%09%09%09%09%0AAccount+No%0A" +
+                  AccountDetails.AccountNo
                 : ""
             }${
               AccountDetails.BranchName
-                ? "%2A%0A%09%09%09%09%09%09%09%09%0ABranch+Name%2A+%0A" +
+                ? "%0A%09%09%09%09%09%09%09%09%0ABranch+Name%0A" +
                   AccountDetails.BranchName
                 : ""
             }${
               AccountDetails.BranchCode
-                ? "%2A%0A%09%09%09%09%09%09%09%09%0ABranch+Code%2A+%0A" +
+                ? "%0A%09%09%09%09%09%09%09%09%0ABranch+Code%0A" +
                   AccountDetails.BranchCode
                 : ""
             }${
-              AccountDetails.AccountNo
-                ? "%2A%0A%09%09%09%09%09%09%09%09%0AAccount+No%3A+%0A" +
-                  AccountDetails.AccountNo
-                : ""
-            }${
               AccountDetails.IBANNo
-                ? "%2A%0A%09%09%09%09%09%09%09%09%0AIBAN+No%3A+%0A" +
+                ? "%0A%09%09%09%09%09%09%09%09%0AIBAN+No%0A" +
                   AccountDetails.IBANNo
                 : ""
             }${

@@ -103,14 +103,12 @@ const Page = () => {
           name="country"
           className="sr-only"
           defaultValue="Pakistan"
-          value="Pakistan"
         />
         <input
           id="payment_method"
           name="payment_method"
           className="sr-only"
           defaultValue="easyPaise/jazzCash"
-          value="easyPaise/jazzCash"
         />
         {state?.message && (
           <p className="mt-2 text-sm text-red-500">{state.message}</p>

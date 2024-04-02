@@ -7,10 +7,10 @@ import { redirect } from "@/navigation"
 import { z } from "zod"
 
 const donateFormSchema = z.object({
-    amount: z.number().min(5, { message: "oh please be generous its to minimum" }),
+    amount: z.number().min(5, { message: "oh please be generous its too minimum" }),
     name: z.string({ required_error: "Name pleas name are required" }).min(4, { message: "Name must be 4 characters" }),
     email: z.string().email({ message: 'Please enter a valid email address.' }),
-    country: z.string().optional(),
+    country: z.string().min(3,{message : "Country name must be at leat 3 charactors"}),
     phone: z.string().optional(),
     city: z.string().optional(),
     address: z.string().optional(),
@@ -23,6 +23,7 @@ export type donateFormState = {
         name?: string[];
         amount?: string[];
         email?: string[];
+        country?: string[];
     };
     message?: string | null;
 };
@@ -74,5 +75,15 @@ export const donateForm = async (prevState: donateFormState | undefined, formDat
 
 
     // Revalidate the cache for the invoices page and redirect the user.
-    redirect(payment_method === "directBankTransfer" ? '/Donate/BankAccounts?type=normal&currencySupport=PKR' : payment_method === "easyPaise/jazzCash" ? "/Donate/BankAccounts?type=microFinance&currencySupport=PKR" : "/Donate");
+
+    if (payment_method === "directBankTransfer" && country?.toLocaleLowerCase() === "pakistan") {
+        redirect('/Donate/BankAccounts?type=normal&currencySupport=PKR')
+    } else if (payment_method === "directBankTransfer") {
+        redirect("/Donate/BankAccounts?type=normal&currencySupport=globle")
+    } else if (payment_method === "easyPaise/jazzCash") {
+        redirect("/Donate/BankAccounts?type=microFinance&currencySupport=PKR")
+    } else {
+        redirect("/Donate")
+    }
+
 }
