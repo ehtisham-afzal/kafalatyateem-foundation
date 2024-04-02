@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
-import { useFormStatus } from "react-dom";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 const Page = () => {
   const initialState = { message: "", errors: {} };
@@ -76,13 +74,19 @@ const Page = () => {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="country">Country</Label>
+          <Label htmlFor="country">Country*</Label>
           <Input
             id="country"
             name="country"
             type="text"
             placeholder="Country"
           />
+          {state?.errors?.country &&
+            state.errors.country.map((error: string) => (
+              <p className="mt-2 text-sm text-red-500" key={error}>
+                {error}
+              </p>
+            ))}
         </div>
         <div className="space-y-2">
           <Label htmlFor="city">City</Label>
@@ -103,7 +107,6 @@ const Page = () => {
         name="payment_method"
         className="sr-only"
         defaultValue="directBankTransfer"
-        value="directBankTransfer"
       />
       {state?.message && (
         <p className="mt-2 text-sm text-red-500">{state.message}</p>

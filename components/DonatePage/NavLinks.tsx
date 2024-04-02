@@ -15,7 +15,6 @@ const links = [
     href: "/Donate/DirectBankTransfer",
     iconUrl: "/Icons/SmartPhone.svg",
   },
-  { name: "Paypal", href: "/Donate/Paypal", iconUrl: "/Icons/Paypal.svg" },
   {
     name: "Easypaise / Jazzcash",
     href: "/Donate/MicroFinance",
@@ -27,7 +26,7 @@ export default function NavLinks() {
   const pathname = usePathname();
   return (
     <div
-      className="grid grid-cols-2 gap-4 mb-4 sm:grid-cols-4 grid-flow-dense"
+      className="grid grid-cols-2 gap-4 sm:gap-8 mb-4 sm:grid-cols-3 grid-flow-dense"
       dir="ltr"
     >
       {links.map((link) => {
