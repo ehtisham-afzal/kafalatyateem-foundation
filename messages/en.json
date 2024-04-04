@@ -7,6 +7,7 @@
     "Donate": "Donate",
     "TeamBehind": "Team Behind",
     "Services": "Services",
+    "Contact": "Contact",
     "NavigationTitle": "Navigation",
     "Socials": {
       "NavigationTitle": "Socials",
@@ -120,6 +121,9 @@
     },
     "DonatePage": {
       "title": "Donate Now"
+    },
+    "ContactPage": {
+      "title": "Contact"
     }
   },
   "DonatePage": {
@@ -127,5 +131,14 @@
     "BlankPage-p": "Select one of Payment Method first",
     "PaymentMethods": "Payment Methods",
     "SelectPaymentMethod": "Select one the following payment method to donate"
+  },
+  "Contact": {
+    "Title": "Contact Us"
+  },
+  "AboutePage": {
+    "title": "Aboute Us"
+  },
+  "ContactPage": {
+    "title": "Contact"
   }
 }

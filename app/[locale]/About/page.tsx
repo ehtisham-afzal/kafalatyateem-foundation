@@ -19,19 +19,19 @@ const Page = ({ params: { locale } }: Props) => {
       <p>
         At the heart of Farooqui Orphanage lies a compassionate mission: to
         provide a nurturing home filled with love and happiness for orphans, the
-        destitute, and the abandoned. It&apos;s a place where the physical, mental,
-        emotional, and spiritual needs of the most vulnerable are met with the
-        highest level of care. Education is a cornerstone, offering every child
-        the hope and opportunity for a bright future.
+        destitute, and the abandoned. It&apos;s a place where the physical,
+        mental, emotional, and spiritual needs of the most vulnerable are met
+        with the highest level of care. Education is a cornerstone, offering
+        every child the hope and opportunity for a bright future.
       </p>
       <p>
         The vision of Farooqui Orphanage extends beyond immediate care. It
         aspires to become a self-sustaining community, encompassing not just a
-        children&apos;s home and orphanage, but also educational institutions like
-        schools and universities, a training center, a women&apos;s shelter, and an
-        old age home. This vision includes places of worship, hospitals,
-        libraries, parks, playgrounds, a technology center, shops, and other
-        facilities that contribute to a thriving community.
+        children&apos;s home and orphanage, but also educational institutions
+        like schools and universities, a training center, a women&apos;s
+        shelter, and an old age home. This vision includes places of worship,
+        hospitals, libraries, parks, playgrounds, a technology center, shops,
+        and other facilities that contribute to a thriving community.
       </p>
       <p>
         Farooqi Orphanage is dedicated to providing a holistic approach to care.
