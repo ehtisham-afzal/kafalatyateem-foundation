@@ -29,7 +29,7 @@
   "ServicesAndFacilitiesSection": {
     "Title": "Services & Facilities we Providing",
     "SeeAll": "See All",
-    "ReadMore": "Click here to see all Services & Facilities we providing",
+    "ReadMore": "Click here to see all",
     "TableHeader": {
       "Facility": "Facility",
       "Description": "Description"
@@ -103,7 +103,7 @@
   "Metadata": {
     "HomePage": {
       "title": {
-        "template": "%s | Kafalat e yateem foundation malakand",
+        "template": "Kafalat e yateem foundation malakand",
         "Defualt": "Kafalat e yateem foundation malakand NGO for Orphans"
       }
     },
