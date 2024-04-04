@@ -1,6 +1,6 @@
 "use server"
 import db from "@/db/drizzle"
-import { members } from "@/db/schema"
+import { heroPhotos, members } from "@/db/schema"
 import { eq } from "drizzle-orm";
 
 export const getAllmembersData = async () => {
@@ -14,3 +14,7 @@ export const getExectiveBodyMembersData = async (count: number) => {
     return membersData;
 }
 
+export const fetchHeroImages = async () => {
+    const heroImages = await db.select().from(heroPhotos)
+    return heroImages;
+}

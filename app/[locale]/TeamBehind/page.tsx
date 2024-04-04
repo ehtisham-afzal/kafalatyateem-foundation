@@ -1,9 +1,5 @@
 import { getAllmembersData } from "@/actions/actions";
 import PersonCard from "@/components/Cards/PersonCard";
-import { TeamBehind } from "@/lib/Data";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import React from "react";
 
 
 const Page = async () => {
