@@ -1,17 +1,18 @@
 "use client";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { GalleryPhotos } from "@/lib/Data";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useRef } from "react";
 
-const HeroCarousel = () => {
+type Image = { id: number; imageUrl: string };
+
+const HeroCarousel = ({ Images } : {Images : Image[]}) => {
   const plugin = useRef(Autoplay({ delay: 5000 }));
 
   return (
@@ -27,20 +28,22 @@ const HeroCarousel = () => {
       //   onMouseLeave={plugin.current.reset}
     >
       <CarouselContent className="w-full h-full -ml-2 -md:ml-4">
-        {GalleryPhotos.map(({ src, alt }, i) => (
-          <CarouselItem className="pl-2 md:pl-4" key={i}>
+        {Images.map(({ id, imageUrl }) => (
+          <CarouselItem className="pl-2 w-full h-full md:pl-4" key={id}>
             <Image
               className="object-cover w-full h-full overflow-hidden rounded-lg"
-              src={src}
-              key={alt}
+              src={imageUrl}
+              // We can't use fill mode bcz its coroasual
+              // fill
               width={300}
               height={150}
-              alt={alt}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
+              alt="K Y F Malakand"
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious  />
+      <CarouselPrevious />
       <CarouselNext />
     </Carousel>
   );
