@@ -1,7 +1,4 @@
 import ContactInformationSection from "@/components/ContactInformationSection";
-import { Separator } from "@/components/ui/separator";
-import { SocialLinks } from "@/lib/Data";
-import { MailIcon, MapPinnedIcon, PhoneCallIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 

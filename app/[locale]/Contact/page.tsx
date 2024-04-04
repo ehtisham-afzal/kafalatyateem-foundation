@@ -1,17 +1,11 @@
 import ContactInformationSection from "@/components/ContactInformationSection";
 import ContactUsForm from "@/components/ContactUsForm";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
-import { SocialLinks } from "@/lib/Data";
 import {
-  MailIcon,
-  MapPinnedIcon,
-  MessageCircleMore,
-  PhoneCallIcon,
+  MessageCircleMore
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
