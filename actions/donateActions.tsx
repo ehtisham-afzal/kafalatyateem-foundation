@@ -2,7 +2,6 @@
 
 import db from "@/db/drizzle"
 import { donate } from "@/db/schema"
-import { revalidatePath } from "next/cache"
 import { redirect } from "@/navigation"
 import { z } from "zod"
 

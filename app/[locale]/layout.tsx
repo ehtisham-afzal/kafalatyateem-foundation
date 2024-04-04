@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { locales } from "@/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
 
 type Params = {
   params: {

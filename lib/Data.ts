@@ -201,6 +201,7 @@ export const NavLinks = [
     { Name: "Donate", Link: "/Donate" },
     { Name: "TeamBehind", Link: "/TeamBehind" },
     { Name: "Services", Link: "/Services" },
+    { Name: "Contact", Link: "/Contact" },
 ]
 
 
