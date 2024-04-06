@@ -29,7 +29,7 @@
   "ServicesAndFacilitiesSection": {
     "Title": "خدمات",
     "SeeAll": "اظهار الكل",
-    "ReadMore": "انقر هنا لرؤية كافة الخدمات",
+    "ReadMore": "انقر هنا لرؤية كل شيء",
     "TableHeader": {
       "Description": "وصف",
       "Facility": "منشأة"
@@ -102,7 +102,7 @@
   "Metadata": {
     "HomePage": {
       "title": {
-        "template": "%s | \nمؤسسة كفالات يتيم ملكاند",
+        "template": "مؤسسة كفالات يتيم ملكاند",
         "Defualt": "مؤسسة كفالات يتيم ملكان وهي منظمة غير حكومية للأيتام"
       }
     },
