@@ -37,3 +37,7 @@ export const heroPhotos = pgTable("heroPhotos", {
     id: serial("id").primaryKey(),
     imageUrl: text("imageUrl").notNull()
 })
+export const galleryPhotos = pgTable("galleryPhotos", {
+    id: serial("id").primaryKey(),
+    imageUrl: text("imageUrl").notNull()
+})
