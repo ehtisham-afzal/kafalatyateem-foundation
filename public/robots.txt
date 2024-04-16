@@ -1,3 +1,2 @@
-userAgent: '*',
-allow: '/',
+allow: *,
 disallow: '/admin/',
