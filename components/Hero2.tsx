@@ -10,10 +10,10 @@ const Hero2 = () => {
     <section className="w-full py-4 sm:py-8 lg:py-12">
       <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <Image
-          alt="Hero"
+          alt="YateemsReciewingBags"
           className="hidden object-cover object-bottom h-full mx-auto overflow-hidden lg:block rounded-xl sm:w-full lg:order-last"
           height="310"
-          src="/heroImage.jpg"
+          src="/YateemsReciewingBags.jpg"
           width="550"
           draggable="false"
         />
