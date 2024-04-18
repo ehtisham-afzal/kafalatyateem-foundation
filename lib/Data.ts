@@ -187,11 +187,11 @@ export const TeamBehind = [
 export const SocialLinks = [
     {
         Name: "Facebook",
-        IdURL: "https://www.facebook.com/people/Kafalate-Yateem-Foundation-District-Malakand/100064620314998/",
+        IdURL: "https://www.facebook.com/DaYateemAsra?mibextid=kFxxJD",
     },
     {
         Name: "Youtube",
-        IdURL: "https://youtube.com/kafalatyateem",
+        IdURL: "https://www.youtube.com/@DaYateemAsra",
     },
 ];
 
