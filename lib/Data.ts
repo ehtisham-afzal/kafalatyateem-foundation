@@ -1,11 +1,11 @@
 
 export const GalleryPhotos = [
-    { src: "/kids.jpg", colSpan: 2, rowSpan: 2, alt: "Kids" },
-    { src: "/children1.jpg", colSpan: 1, rowSpan: 1, alt: "Childrens" },
-    { src: "/dove.jpg", colSpan: 1, rowSpan: 1, alt: "dove" },
-    { src: "/hands.jpg", colSpan: 1, rowSpan: 1, alt: "Hands" },
-    { src: "/hope.jpg", colSpan: 1, rowSpan: 1, alt: "Hope" },
-    { src: "/children.jpg", colSpan: 2, rowSpan: 2, alt: "Childrens" },
+    { src: "/YateemsEating.jpg", colSpan: 2, rowSpan: 2, alt: "Kafalat yateem foundation Orphans Eating" },
+    { src: "/YateemsReciewingBags.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation Orphans Reciewing Bags" },
+    { src: "/YateemsOnKhatm.jpg", colSpan: 1, rowSpan: 1, alt: "Orphans On Khatm ul Quraan" },
+    { src: "/FunctionPhoto2.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation Skill Show FunctionPhoto" },
+    { src: "/FunctionPhoto.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation FunctionPhoto" },
+    { src: "/YateemsGroupPhoto.jpg", colSpan: 2, rowSpan: 2, alt: "Kafalat yateem foundation Orphans GroupPhoto" },
 ]
 
 export const ServicesAndFacilities: string[] = ["1", "2", "3", "4", "5"]
@@ -187,11 +187,11 @@ export const TeamBehind = [
 export const SocialLinks = [
     {
         Name: "Facebook",
-        IdURL: "https://www.facebook.com/people/Kafalate-Yateem-Foundation-District-Malakand/100064620314998/",
+        IdURL: "https://www.facebook.com/DaYateemAsra?mibextid=kFxxJD",
     },
     {
         Name: "Youtube",
-        IdURL: "https://youtube.com/kafalatyateem",
+        IdURL: "https://www.youtube.com/@DaYateemAsra",
     },
 ];
 

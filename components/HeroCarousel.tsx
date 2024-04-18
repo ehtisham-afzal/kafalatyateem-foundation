@@ -35,9 +35,9 @@ const HeroCarousel = ({ Images } : {Images : Image[]}) => {
               src={imageUrl}
               // We can't use fill mode bcz its coroasual
               // fill
-              width={300}
-              height={150}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
+              width={600}
+              height={300}
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
               alt="K Y F Malakand"
             />
           </CarouselItem>
