@@ -17,9 +17,9 @@ const Page = ({ params: { locale } }: Props) => {
   const t = useTranslations();
   return (
     <section className="w-full min-h-[50dvh] space-y-14">
-      <h2 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+      <h1 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         {t("ServicesAndFacilities.Title")}
-      </h2>
+      </h1>
       <div className="w-full prose prose-lg">
         <table>
           <thead>
