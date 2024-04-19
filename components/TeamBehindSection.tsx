@@ -10,9 +10,9 @@ const TeamBehindSection = () => {
   return (
     <section className="w-full space-y-8 md:space-y-12">
       <div className="flex items-center justify-between w-full h-fit">
-        <h2 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
+        <h1 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
           {t("TeamBehindSection.Title")}
-        </h2>
+        </h1>
         <Link
           href="/TeamBehind"
           className="items-center hidden gap-1 text-xl font-semibold tracking-tight sm:flex group text-muted-foreground scroll-m-20 first:mt-0 hover:text-primary"

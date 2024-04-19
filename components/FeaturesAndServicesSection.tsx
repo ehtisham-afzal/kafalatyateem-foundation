@@ -9,9 +9,9 @@ const FeaturesAndServicesSection = () => {
   return (
     <section className="w-full pb-16 space-y-8 md:space-y-12">
       <div className="flex items-center justify-between w-full h-fit">
-        <h2 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
+        <h1 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
           {t("ServicesAndFacilitiesSection.Title")}
-        </h2>
+        </h1>
         <Link
           href="/Services"
           className="items-center hidden gap-1 text-xl font-semibold tracking-tight sm:flex group text-muted-foreground scroll-m-20 first:mt-0 hover:text-primary"

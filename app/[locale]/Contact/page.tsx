@@ -25,9 +25,9 @@ const Page = ({ params: { locale } }: Props) => {
 
   return (
     <section className="w-full min-h-[50dvh] min-w-full px-1">
-      <h2 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+      <h1 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         {t("Contact.Title")}
-      </h2>
+      </h1>
       <div className="space-y-12">
         <div className="space-y-2">
           <p className="text-muted-foreground">

@@ -17,7 +17,7 @@ const Page = ({ params: { locale } }: Props) => {
   return (
     <>
       <section className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
-        <h2>{t("About.Title")}</h2>
+        <h1>{t("About.Title")}</h1>
         <p>
           At the heart of Farooqui Orphanage lies a compassionate mission: to
           provide a nurturing home filled with love and happiness for orphans,

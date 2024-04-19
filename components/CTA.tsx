@@ -22,9 +22,9 @@ const CTA = () => {
         src="/Illustratuion-giving-money.png"
         alt="illustration"
       />
-      <h1 className="text-xl font-semibold tracking-tight scroll-m-20 w-fit text-wrap text-start md:text-center">
+      <h3 className="text-xl font-semibold tracking-tight scroll-m-20 w-fit text-wrap text-start md:text-center">
         {t("Hadith.Title")}
-      </h1>
+      </h3>
       <p className="text-wrap italic text-start w-full md:w-[30rem] ">
         {t("Hadith.Content")}
       </p>
