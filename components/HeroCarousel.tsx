@@ -6,13 +6,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Link } from "@/navigation";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useRef } from "react";
 
 type Image = { id: number; imageUrl: string };
 
-const HeroCarousel = ({ Images } : {Images : Image[]}) => {
+const HeroCarousel = ({ Images }: { Images: Image[] }) => {
   const plugin = useRef(Autoplay({ delay: 5000 }));
 
   return (
@@ -35,13 +36,27 @@ const HeroCarousel = ({ Images } : {Images : Image[]}) => {
               src={imageUrl}
               // We can't use fill mode bcz its coroasual
               // fill
-              width={600}
-              height={300}
+              width={1000}
+              height={600}
               // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
               alt="K Y F Malakand"
             />
           </CarouselItem>
         ))}
+        <CarouselItem className="pl-2 w-full h-full md:pl-4">
+          <Link href="/Books/40hadiths">
+            <Image
+              className="object-cover w-full h-full overflow-hidden rounded-lg"
+              src="/FarooqiBookCover.jpg"
+              // We can't use fill mode bcz its coroasual
+              // fill
+              width={1000}
+              height={600}
+              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
+              alt="/Iftikhar Farooqi Book cover"
+            />
+          </Link>
+        </CarouselItem>
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
