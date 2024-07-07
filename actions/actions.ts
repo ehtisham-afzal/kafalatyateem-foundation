@@ -18,3 +18,13 @@ export const fetchHeroImages = async () => {
     const heroImages = await db.select().from(heroPhotos)
     return heroImages;
 }
+
+export const uploadHeroImage = async (imageUrl: string) => {
+    const heroImage = await db.insert(heroPhotos).values({ imageUrl }).execute()
+    return heroImage;
+}
+
+export const deleteHeroImage = async (id: number) => {
+    const deletedImage = await db.delete(heroPhotos).where(eq(heroPhotos.id, id)).execute()
+    return deletedImage;
+}

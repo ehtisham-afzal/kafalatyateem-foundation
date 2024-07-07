@@ -10,6 +10,14 @@ const nextConfig = {
     config.resolve.alias.canvas = false;
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
 };
  
 export default withNextIntl(nextConfig);
