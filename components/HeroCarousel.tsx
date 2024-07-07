@@ -11,9 +11,9 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useRef } from "react";
 
-type Image = { id: number; imageUrl: string };
+type ImagesTypes = { id: number; imageUrl: string };
 
-const HeroCarousel = ({ Images }: { Images: Image[] }) => {
+const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
   const plugin = useRef(Autoplay({ delay: 5000 }));
 
   return (
