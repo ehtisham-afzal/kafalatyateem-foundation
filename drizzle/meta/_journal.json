@@ -8,6 +8,20 @@
       "when": 1711818547748,
       "tag": "0000_striped_darkstar",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1720414934104,
+      "tag": "0001_dry_gideon",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1720415454820,
+      "tag": "0002_common_namorita",
+      "breakpoints": true
     }
   ]
 }

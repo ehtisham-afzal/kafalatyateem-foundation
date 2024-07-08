@@ -38,3 +38,11 @@ export const heroPhotos = pgTable("heroPhotos", {
     imageUrl: text("imageUrl").notNull()
 })
 
+export const homePageGalleryPhotos = pgTable("homePageGalleryPhotos", {
+    id: serial("id").primaryKey(),
+    imageUrl: text("imageUrl").notNull(),
+    colSpan: integer("colSpan").notNull(),
+    rowSpan: integer("rowSpan").notNull(),
+    alt: text("alt").notNull(),
+})
+
