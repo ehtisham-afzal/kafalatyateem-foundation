@@ -1,6 +1,9 @@
 "use client";
 
-import { deleteHeroImage, fetchHeroImages } from "@/actions/actions";
+import {
+  deleteHeroImage,
+  fetchHeroImages,
+} from "@/actions/actions";
 import {
   Card,
   CardContent,
@@ -17,7 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import CloudinaryUploadWidget from "./CloudinaryUploadwidget";
+import CloudinaryUploaderWidget from "./CloudinaryUploadwidget";
 
 export default function HeroImagesComp() {
   const [HeroImages, setHeroImages] = useState<
@@ -35,9 +38,9 @@ export default function HeroImagesComp() {
 
   // Cloudinary Configuration
   // Replace with your own cloud name
-  const [cloudName] = useState(process.env.ALGOLIA_ClOUD_NAME);
+  const cloudName = process.env.NEXT_PUBLIC_ALGOLIA_ClOUD_NAME;
   // Replace with your own upload preset
-  const [uploadPreset] = useState(process.env.ALGOLIA_ClOUD_PRESET);
+  const uploadPreset = process.env.NEXT_PUBLIC_ALGOLIA_ClOUD_PRESET;
 
   // Upload Widget Configuration
   // Remove the comments from the code below to add
@@ -108,7 +111,7 @@ export default function HeroImagesComp() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-          <CloudinaryUploadWidget
+          <CloudinaryUploaderWidget
             className="flex min-w-12 min-h-12 w-full items-center justify-center rounded-md border border-dashed"
             uwConfig={uwConfig}
           />

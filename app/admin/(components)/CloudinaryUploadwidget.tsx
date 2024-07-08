@@ -1,3 +1,4 @@
+"use client";
 import { uploadHeroImage } from "@/actions/actions";
 import { Upload } from "lucide-react";
 import { createContext, useEffect, useState } from "react";
