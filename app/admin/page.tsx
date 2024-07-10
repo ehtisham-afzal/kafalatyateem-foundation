@@ -1,18 +1,12 @@
 import Link from "next/link";
 
 import {
-  Activity,
-  CircleUser,
-  CreditCard,
-  DollarSign,
-  Menu,
+  CircleUser, Menu,
   Package2,
-  Search,
-  Users,
+  Search
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
