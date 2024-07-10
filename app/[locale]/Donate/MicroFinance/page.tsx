@@ -76,7 +76,7 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone</Label>
+            <Label htmlFor="phone">Phone (optional)</Label>
             <Input
               id="phone"
               name="phone"
@@ -85,12 +85,12 @@ const Page = () => {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="city">City</Label>
+            <Label htmlFor="city">City (optional)</Label>
             <Input id="city" name="city" type="text" placeholder="City" />
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="address">Address</Label>
+          <Label htmlFor="address">Address (optional)</Label>
           <Input
             id="address"
             name="address"
