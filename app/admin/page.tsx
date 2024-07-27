@@ -1,11 +1,5 @@
 import Link from "next/link";
-
-import {
-  CircleUser, Menu,
-  Package2,
-  Search
-} from "lucide-react";
-
+import { CircleUser, Menu, Package2, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -17,7 +11,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
 import HeroImagesComp from "./(components)/HeroImagesComp";
 import MainPageGalleryPhots from "./(components)/MainPageGalleryPhotos";
 import Statistics from "./(components)/Statistics";
