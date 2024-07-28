@@ -1,6 +1,6 @@
-"use client";
-
+"use client"
 import { deleteHeroImage, fetchHeroImages } from "@/actions/actions";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -15,13 +15,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Upload, UploadCloudIcon } from "lucide-react";
 import Image from "next/image";
+import { unstable_noStore as noStore } from "next/cache";
 import { useEffect, useState } from "react";
-import CloudinaryUploaderWidget from "./CloudinaryUploadwidget";
-import { claudinaryConfig } from "./claudinaryConfig";
 
 export default function HeroImagesComp() {
-  const Config = claudinaryConfig();
+  noStore()
   const [HeroImages, setHeroImages] = useState<
     Array<{ id: number; imageUrl: string }>
   >([]);
@@ -35,6 +35,7 @@ export default function HeroImagesComp() {
     fetchImages();
   }, []);
 
+
   const handleImageDelete = async (id: number, imageUrl: string) => {
     await deleteHeroImage(id)
       .then(() => {
@@ -45,6 +46,10 @@ export default function HeroImagesComp() {
       });
   };
 
+  const handleUploadHeroImage = async()=> {
+
+  }
+
   return (
     <Card className="overflow-hidden h-fit">
       <CardHeader>
@@ -52,7 +57,7 @@ export default function HeroImagesComp() {
         <CardDescription>Select Images you want to desplay</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-3 xl:grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2 xl:grid-cols-2">
           {HeroImages &&
             HeroImages.length > 0 &&
             HeroImages.map((image, index) => (
@@ -80,10 +85,9 @@ export default function HeroImagesComp() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-          <CloudinaryUploaderWidget
-            className="flex min-w-12 min-h-12 w-full items-center justify-center rounded-md border border-dashed"
-            uwConfig={Config}
-          />
+          <Button variant="ghost" className="flex items-center justify-center w-full border border-dashed rounded-md min-w-12 min-h-12">
+            <Upload className="size-4" />
+          </Button>
         </div>
       </CardContent>
     </Card>
