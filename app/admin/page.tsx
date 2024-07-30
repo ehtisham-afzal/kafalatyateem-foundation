@@ -17,8 +17,8 @@ import Statistics from "./(components)/Statistics";
 
 export default function Dashboard() {
   return (
-    <div className="flex flex-col w-full min-h-screen">
-      <header className="sticky top-0 flex items-center h-16 gap-4 px-4 border-b bg-background md:px-6">
+    <div className="flex flex-col w-full max-w-full min-w-full min-h-screen">
+      <header className="sticky top-0 z-50 flex items-center h-16 gap-4 px-4 border-b bg-background md:px-6">
         <nav className="flex-col hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="#"
@@ -88,7 +88,7 @@ export default function Dashboard() {
           </DropdownMenu>
         </div>
       </header>
-      <main className="flex flex-col flex-1 gap-4 p-4 md:gap-8 md:p-8">
+      <main className="z-0 flex flex-col flex-1 w-full gap-4 p-4 md:gap-8 md:p-8">
         <Statistics />
         <div className="grid gap-4 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           <MainPageGalleryPhots />

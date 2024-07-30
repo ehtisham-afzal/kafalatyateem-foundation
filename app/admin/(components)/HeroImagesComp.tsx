@@ -15,13 +15,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Upload, UploadCloudIcon } from "lucide-react";
+import { Upload } from "lucide-react";
 import Image from "next/image";
-import { unstable_noStore as noStore } from "next/cache";
 import { useEffect, useState } from "react";
 
 export default function HeroImagesComp() {
-  noStore()
   const [HeroImages, setHeroImages] = useState<
     Array<{ id: number; imageUrl: string }>
   >([]);
@@ -51,7 +49,7 @@ export default function HeroImagesComp() {
   }
 
   return (
-    <Card className="overflow-hidden h-fit">
+    <Card className="max-w-full overflow-hidden h-fit">
       <CardHeader>
         <CardTitle>Main page hero images</CardTitle>
         <CardDescription>Select Images you want to desplay</CardDescription>
@@ -85,7 +83,7 @@ export default function HeroImagesComp() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-          <Button variant="ghost" className="flex items-center justify-center w-full border border-dashed rounded-md min-w-12 min-h-12">
+          <Button variant="ghost" className="flex items-center justify-center w-full border border-gray-300 border-dashed rounded-md bg-gray-50 min-w-12 min-h-12">
             <Upload className="size-4" />
           </Button>
         </div>

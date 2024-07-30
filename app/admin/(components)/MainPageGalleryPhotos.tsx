@@ -25,13 +25,13 @@ export default async function MainPageGalleryPhots() {
   noStore()
   const galleryPhotos = await getHomePageGalleryPhotos()
     return (
-      <Card className="w-full lg:col-span-2 xl:col-span-3">
+      <Card className="w-full max-w-full lg:col-span-2 xl:col-span-3">
         <CardHeader>
           <CardTitle>Gallery photos</CardTitle>
           <CardDescription>Manage main page gallery phtos here.</CardDescription>
         </CardHeader>
-        <CardContent>
-          <Table>
+        <CardContent className="px-0 sm:px-6">
+          <Table className="max-w-full">
             <TableHeader>
               <TableRow>
                 <TableHead className="w-[100px] sm:table-cell">Image</TableHead>
@@ -39,8 +39,8 @@ export default async function MainPageGalleryPhots() {
                 <TableHead className="hidden lg:table-cell">Col-span</TableHead>
                 <TableHead className="hidden xl:table-cell">Row-span</TableHead>
                 <TableHead className="hidden sm:table-cell">Id</TableHead>
-                <TableHead>
-                  <span className="sr-only">Actions</span>
+                <TableHead className="sr-only">
+                  <span >Actions</span>
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -56,7 +56,7 @@ export default async function MainPageGalleryPhots() {
                       width="50"
                     />
                   </TableCell>
-                  <TableCell>{photo.alt}</TableCell>
+                  <TableCell className="px-0 overflow-x-scroll max-w-52 sm:max-w-full sm:overflow-hidden text-wrap">{photo.alt}</TableCell>
                   <TableCell className="hidden lg:table-cell">
                     {photo.colSpan}
                   </TableCell>
