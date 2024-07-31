@@ -1,6 +1,10 @@
 "use client";
-
-import { deleteHeroImage, fetchHeroImages } from "@/actions/actions";
+import {
+  deleteHeroImage,
+  fetchHeroImages,
+  uploadHeroImage,
+} from "@/actions/actions";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -15,16 +19,38 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Loader2, Upload } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import CloudinaryUploaderWidget from "./CloudinaryUploadwidget";
-import { claudinaryConfig } from "./claudinaryConfig";
+import useImageUpload from "../Hooks/useImageUpload";
 
 export default function HeroImagesComp() {
-  const Config = claudinaryConfig();
+  const {
+    localImage,
+    setLocalImage,
+    uploading,
+    error,
+    handleUpload,
+    response,
+  } = useImageUpload();
   const [HeroImages, setHeroImages] = useState<
     Array<{ id: number; imageUrl: string }>
   >([]);
+
+  useEffect(() => {
+    // upload the image url to database if the response are okay
+    if (response) {
+      uploadHeroImage(response.secure_url);
+      window.location.reload();
+    }
+  }, [response]);
+
+  useEffect(() => {
+    // upload the image into cloudinary database if the local image is selected
+    if (localImage) {
+      handleUpload();
+    }
+  }, [localImage]);
 
   // Fetch Hero Images
   useEffect(() => {
@@ -46,13 +72,13 @@ export default function HeroImagesComp() {
   };
 
   return (
-    <Card className="overflow-hidden h-fit">
+    <Card className="max-w-full overflow-hidden h-fit">
       <CardHeader>
         <CardTitle>Main page hero images</CardTitle>
         <CardDescription>Select Images you want to desplay</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-3 xl:grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2 xl:grid-cols-2">
           {HeroImages &&
             HeroImages.length > 0 &&
             HeroImages.map((image, index) => (
@@ -80,10 +106,29 @@ export default function HeroImagesComp() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ))}
-          <CloudinaryUploaderWidget
-            className="flex min-w-12 min-h-12 w-full items-center justify-center rounded-md border border-dashed"
-            uwConfig={Config}
-          />
+          <Button
+            variant="ghost"
+            disabled={uploading}
+            className="relative flex items-center justify-center w-full border border-gray-300 border-dashed rounded-md bg-gray-50 min-w-12 min-h-12"
+          >
+            <input
+              className="absolute inset-0 opacity-0 cursor-pointer"
+              onChange={(e) => {
+                const file = e.target.files?.[0] || null;
+                if (!file) {
+                  console.log("No image selected");
+                  return;
+                }
+                setLocalImage(file);
+              }}
+              type="file"
+            />
+            {uploading || error ? (
+              <Loader2 className="animate-spin" />
+            ) : (
+              <Upload className="size-4" />
+            )}
+          </Button>
         </div>
       </CardContent>
     </Card>

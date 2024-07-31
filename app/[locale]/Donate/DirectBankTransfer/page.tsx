@@ -33,7 +33,7 @@ const Page = () => {
       <h2 className="text-lg font-semibold">Personal Details</h2>
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name">Name*</Label>
+          <Label htmlFor="name">Name</Label>
           <Input
             id="name"
             name="name"
@@ -48,7 +48,7 @@ const Page = () => {
             ))}
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">Email*</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
             id="email"
             name="email"
@@ -74,7 +74,7 @@ const Page = () => {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="country">Country*</Label>
+          <Label htmlFor="country">Country</Label>
           <Input
             id="country"
             name="country"
