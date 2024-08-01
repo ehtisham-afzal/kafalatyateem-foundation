@@ -39,9 +39,13 @@ export default function HeroImagesComp() {
 
   useEffect(() => {
     // upload the image url to database if the response are okay
-    if (response) {
+    if (response && response.secure_url) {
       uploadHeroImage(response.secure_url);
       window.location.reload();
+    } else if (response && response.error) {
+      alert("failed to upload " + response.error);
+    } else {
+      return
     }
   }, [response]);
 

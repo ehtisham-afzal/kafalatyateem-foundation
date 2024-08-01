@@ -34,7 +34,15 @@ export const getHomePageGalleryPhotos = async () => {
     return galleryPhotos;
 }
 
-export const updateGalleryImageByID = async (id: number, imageUrl: string, alt : string) => {
+export const updateGalleryImageByID = async (id: number, imageUrl: string, alt: string) => {
     const updatedImage = await db.update(homePageGalleryPhotos).set({ imageUrl, alt }).where(eq(homePageGalleryPhotos.id, id)).execute()
     return updatedImage;
+}
+
+export const checkIfAdmin = async (email: string, password: string) => {
+    if (email === "khange@gmail.com" && password === "123456") {
+        return true;
+    } else {
+        return false;
+    }
 }
