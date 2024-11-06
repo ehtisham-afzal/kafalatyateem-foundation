@@ -2,17 +2,29 @@ import FeaturesCard from "@/components/Cards/FeaturesCard";
 import { ServicesAndFacilities } from "@/lib/Data";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import React from "react";
+import React, { use } from "react";
 type Props = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params: { locale } }: Props) {
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return { title: t("SevicesPage.title") };
 }
 
-const Page = ({ params: { locale } }: Props) => {
+const Page = (props: Props) => {
+  const params = use(props.params);
+
+  const {
+    locale
+  } = params;
+
   unstable_setRequestLocale(locale);
   const t = useTranslations();
   return (

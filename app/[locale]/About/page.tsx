@@ -1,17 +1,30 @@
+import { use } from "react";
 import ContactInformationSection from "@/components/ContactInformationSection";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 type Props = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params: { locale } }: Props) {
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return { title: t("AboutePage.title") };
 }
 
-const Page = ({ params: { locale } }: Props) => {
+const Page = (props: Props) => {
+  const params = use(props.params);
+
+  const {
+    locale
+  } = params;
+
   unstable_setRequestLocale(locale);
   const t = useTranslations();
   return (

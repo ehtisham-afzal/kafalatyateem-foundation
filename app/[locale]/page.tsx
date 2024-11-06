@@ -8,12 +8,18 @@ import TeamBehindSection from "@/components/TeamBehindSection";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 type Props = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
-export default function Home({ params: { locale } }: Props) {
+export default async function Home(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   unstable_setRequestLocale(locale);
   return (
     <main className="flex flex-col items-center justify-between w-full min-h-screen space-y-8 ">

@@ -8,7 +8,13 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 
-export async function generateMetadata({ params: { locale } }: Params) {
+export async function generateMetadata(props: Params) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
@@ -72,9 +78,9 @@ export function generateStaticParams() {
 }
 
 type Params = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 const fontSans = FontSans({
@@ -82,13 +88,22 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+export default async function RootLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   unstable_setRequestLocale(locale);
   return (
     <html lang={locale} dir={locale == "ar" ? "rtl" : "ltr"}>

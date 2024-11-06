@@ -3,23 +3,39 @@ import { locales } from "@/navigation";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 type Props = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
   children: React.ReactNode;
 };
 
-export async function generateMetadata({ params: { locale } }: Props) {
+export async function generateMetadata(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return { title: t("DonatePage.title") };
 }
 
-const DonatePageLayoute = ({ params: { locale }, children }: Props) => {
+const DonatePageLayoute = (props: Props) => {
+  const params = use(props.params);
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   unstable_setRequestLocale(locale);
   const t = useTranslations();
   return (
