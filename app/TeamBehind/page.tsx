@@ -1,6 +1,7 @@
 import { getAllmembersData } from "@/actions/actions";
 import PersonCard from "@/components/Cards/PersonCard";
 
+export const revalidate = 3600; // Cache for 1 hour, adjust as needed
 
 const Page = async () => {
   const TeamBehind = await getAllmembersData()

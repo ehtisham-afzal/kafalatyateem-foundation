@@ -1,5 +1,5 @@
 "use client";
-import { donateForm } from "@/actions/donateActions";
+import { donateForm, DonateFormState } from "@/actions/donateActions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { useActionState } from "react";
 
 const Page = () => {
-  const initialState = { message: "", errors: {} };
+  const initialState = { message: "", errors: {} as DonateFormState["errors"] };
   const [state, formAction, isPending] = useActionState(donateForm, initialState);
 
   return (

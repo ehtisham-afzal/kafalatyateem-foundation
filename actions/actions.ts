@@ -2,22 +2,25 @@
 import db from "@/db/drizzle"
 import { heroPhotos, homePageGalleryPhotos, members } from "@/db/schema"
 import { eq } from "drizzle-orm";
+import { cache } from 'react'
 
 export const getAllmembersData = async () => {
     const membersData = await db.select().from(members)
     return membersData;
 }
 
-export const getExectiveBodyMembersData = async (count: number) => {
-    /// select members where groupMember = "ExativeBodyMember" limit count; 
-    const membersData = await db.select().from(members).where(eq(members.groupMember, "ExativeBodyMember")).limit(count)
+export const getExectiveBodyMembersData = cache(async (count: number) => {
+    const membersData = await db.select()
+        .from(members)
+        .where(eq(members.groupMember, "ExativeBodyMember"))
+        .limit(count)
     return membersData;
-}
+})
 
-export const fetchHeroImages = async () => {
+export const fetchHeroImages = cache(async () => {
     const heroImages = await db.select().from(heroPhotos)
     return heroImages;
-}
+})
 
 export const uploadHeroImage = async (imageUrl: string) => {
     const heroImage = await db.insert(heroPhotos).values({ imageUrl }).execute()

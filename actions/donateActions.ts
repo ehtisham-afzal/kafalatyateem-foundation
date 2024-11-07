@@ -1,76 +1,90 @@
-"use server";
+"use server"
+import db from "@/db/drizzle"
+import { donate } from "@/db/schema"
+import { redirect } from "next/navigation"
+import { z } from "zod"
 
-interface DonateFormState {
-  message: string;
-  errors: {
-    amount?: string[];
-    name?: string[];
-    email?: string[];
-    country?: string[];
-    [key: string]: string[] | undefined;
-  };
+const donateFormSchema = z.object({
+    amount: z.number().min(5, { message: "oh please be generous its too minimum" }),
+    name: z.string({ required_error: "Name pleas name are required" }).min(4, { message: "Name must be 4 characters" }),
+    email: z.string().email({ message: 'Please enter a valid email address.' }),
+    country: z.string().min(3, { message: "Country name must be at leat 3 charactors" }),
+    phone: z.string().optional(),
+    city: z.string().optional(),
+    address: z.string().optional(),
+    payment_method: z.enum(["easyPaise/jazzCash", "payViaCardOnline", "directBankTransfer", "payPal"]),
+});
+
+
+export type DonateFormState = {
+    errors: {
+        amount?: string[];
+        name?: string[];
+        email?: string[];
+        country?: string[];
+        [key: string]: string[] | undefined;
+    };
+    message?: string | null;
+};
+
+export const donateForm = async (prevState: DonateFormState, formData: FormData): Promise<DonateFormState> => {
+    // Initialize with empty errors object to match type
+    const initialErrors: DonateFormState['errors'] = {};
+
+    // Validate form using Zod
+    const validatedFields = donateFormSchema.safeParse({
+        amount: Number(formData.get('amount')),
+        name: formData.get('name'),
+        email: formData.get('email'),
+        address: formData.get('address'),
+        city: formData.get('city'),
+        country: formData.get('country'),
+        phone: formData.get('phone'),
+        payment_method: formData.get("payment_method")
+    });
+
+    // If form validation fails, return errors early
+    if (!validatedFields.success) {
+        return {
+            errors: validatedFields.error.flatten().fieldErrors as DonateFormState['errors'],
+            message: 'Missing Fields. Please fill required fields',
+        };
+    }
+
+
+    // Prepare data for insertion into the database
+    const { name, amount, email, address, city, country, phone, payment_method } = validatedFields.data;
+    // Insert data into the database
+    try {
+        await db.insert(donate).values({
+            name: name,
+            amount: amount,
+            email: email,
+            payment_method: payment_method,
+            address: address,
+            city: city,
+            country: country,
+            phone: phone,
+        })
+    } catch (error) {
+        console.log(error)
+        return {
+            errors: {},
+            message: 'Database Error: Failed to Submit Form.',
+        };
+    }
+
+
+    // Revalidate the cache for the invoices page and redirect the user.
+
+    if (payment_method === "directBankTransfer" && country?.toLocaleLowerCase() === "pakistan") {
+        redirect('/Donate/BankAccounts?type=normal&currencySupport=PKR')
+    } else if (payment_method === "directBankTransfer") {
+        redirect("/Donate/BankAccounts?type=normal&currencySupport=globle")
+    } else if (payment_method === "easyPaise/jazzCash") {
+        redirect("/Donate/BankAccounts?type=microFinance&currencySupport=PKR")
+    } else {
+        redirect("/Donate")
+    }
+
 }
-
-export async function donateForm(
-  prevState: DonateFormState,
-  formData: FormData
-): Promise<DonateFormState> {
-  const amount = formData.get("amount");
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const phone = formData.get("phone");
-  const country = formData.get("country");
-  const city = formData.get("city");
-  const address = formData.get("address");
-  const payment_method = formData.get("payment_method");
-
-  const errors: DonateFormState["errors"] = {};
-
-  // Validate amount
-  if (!amount || Number(amount) < 1) {
-    errors.amount = ["Amount is required and must be at least 1"];
-  }
-
-  // Validate name
-  if (!name || String(name).trim().length < 2) {
-    errors.name = ["Name is required and must be at least 2 characters"];
-  }
-
-  // Validate email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email || !emailRegex.test(String(email))) {
-    errors.email = ["Please enter a valid email address"];
-  }
-
-  // Validate country
-  if (!country || String(country).trim().length < 2) {
-    errors.country = ["Country is required"];
-  }
-
-  // If there are any errors, return them
-  if (Object.keys(errors).length > 0) {
-    return {
-      message: "Please fix the errors below",
-      errors,
-    };
-  }
-
-  try {
-    // Here you would typically:
-    // 1. Process the donation
-    // 2. Save to database
-    // 3. Send confirmation emails
-    // 4. etc.
-
-    // For now, we'll just simulate a successful donation
-    return {
-      message: "Thank you for your donation!",
-      errors: {},
-    };
-  } catch (error) {
-    return {
-      message: "Something went wrong. Please try again later.",
-      errors: {},
-    };
-  }
-} 
