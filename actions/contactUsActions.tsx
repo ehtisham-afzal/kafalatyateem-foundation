@@ -2,7 +2,7 @@
 
 import db from "@/db/drizzle";
 import { userMessages } from "@/db/schema";
-import { redirect } from "@/navigation";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const contactUsFormSchema = z.object({

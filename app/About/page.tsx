@@ -1,36 +1,17 @@
-import { use } from "react";
 import ContactInformationSection from "@/components/ContactInformationSection";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { Metadata } from "next";
 
-type Props = {
-  params: Promise<{ locale: string }>;
+export const metadata: Metadata = {
+  title: "About us",
 };
 
-export async function generateMetadata(props: Props) {
-  const params = await props.params;
 
-  const {
-    locale
-  } = params;
 
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-  return { title: t("AboutePage.title") };
-}
-
-const Page = (props: Props) => {
-  const params = use(props.params);
-
-  const {
-    locale
-  } = params;
-
-  unstable_setRequestLocale(locale);
-  const t = useTranslations();
+const Page = () => {
   return (
     <>
       <section className="w-full min-h-[50dvh] min-w-full prose prose-lg md:prose-xl px-1">
-        <h1>{t("About.Title")}</h1>
+        <h1>About Kafalat e yatemm foundataion</h1>
         <p>
           At the heart of Farooqui Orphanage lies a compassionate mission: to
           provide a nurturing home filled with love and happiness for orphans,
@@ -82,7 +63,7 @@ const Page = (props: Props) => {
         officia deserunt.
       </p> */}
       </section>
-      <ContactInformationSection params={{ locale }}/>
+      <ContactInformationSection />
     </>
   );
 };

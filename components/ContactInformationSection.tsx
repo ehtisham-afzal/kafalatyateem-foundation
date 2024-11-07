@@ -2,22 +2,12 @@ import { SocialLinks } from "@/lib/Data";
 import { MailIcon, MapPinnedIcon, PhoneCallIcon } from "lucide-react";
 import React from "react";
 import { Separator } from "./ui/separator";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
 
-
-type Props = {
-  params: { locale: string };
-};
-
-const ContactInformationSection = ({ params: { locale } }: Props) => {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations();
+const ContactInformationSection = () => {
   return (
     <section>
       <Separator />
       {/* Contact Information */}
-
       <div className="space-y-4 w-full flex flex-col gap-6 justify-between lg:flex-row mt-6">
         <div className="space-y-4">
           <div className="space-y-2">
@@ -72,7 +62,7 @@ const ContactInformationSection = ({ params: { locale } }: Props) => {
                 className="text-lg hover:text-blue-500"
                 target="__blank"
               >
-                {t(`NavLinks.Socials.${link.Name}`)}
+                {link.Name === "Facebook" ? "Facebook" : "Youtube"}
               </a>
             ))}
           </div>

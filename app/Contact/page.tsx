@@ -1,45 +1,20 @@
-import { use } from "react";
 import ContactInformationSection from "@/components/ContactInformationSection";
 import ContactUsForm from "@/components/ContactUsForm";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
-  MessageCircleMore
-} from "lucide-react";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { MessageCircleMore } from "lucide-react";
 
-type Props = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata(props: Props) {
-  const params = await props.params;
-
-  const {
-    locale
-  } = params;
-
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-  return { title: t("ContactPage.title") };
+export async function generateMetadata() {
+  return { title: "Contact" };
 }
 
-const Page = (props: Props) => {
-  const params = use(props.params);
-
-  const {
-    locale
-  } = params;
-
-  unstable_setRequestLocale(locale);
-  const t = useTranslations();
-
+const Page = () => {
   return (
     <section className="w-full min-h-[50dvh] min-w-full px-1">
       <h1 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-        {t("Contact.Title")}
+        Contact Now
       </h1>
       <div className="space-y-12">
         <div className="space-y-2">
@@ -70,7 +45,7 @@ const Page = (props: Props) => {
           </form>
         </Card>
 
-        <ContactInformationSection params={{ locale }} />
+        <ContactInformationSection />
       </div>
     </section>
   );

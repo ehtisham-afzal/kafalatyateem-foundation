@@ -2,24 +2,14 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { locales } from "@/navigation";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 
-export async function generateMetadata(props: Params) {
-  const params = await props.params;
-
-  const {
-    locale
-  } = params;
-
-  const t = await getTranslations({ locale, namespace: "Metadata" });
-
+export async function generateMetadata() {
   return {
     title: {
-      default: t("HomePage.title.template"),
+      default: "Kafalat e yateem foundation malakand NGO for Orphans",
       template: `%s - ${siteConfig.name}`,
     },
     metadataBase: new URL(siteConfig.url),
@@ -73,40 +63,19 @@ export async function generateMetadata(props: Params) {
   };
 }
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-type Params = {
-  params: Promise<{
-    locale: string;
-  }>;
-};
-
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export default async function RootLayout(
-  props: {
-    children: React.ReactNode;
-    params: Promise<{ locale: string }>;
-  }
-) {
-  const params = await props.params;
+export default async function RootLayout(props: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { children } = props;
 
-  const {
-    locale
-  } = params;
-
-  const {
-    children
-  } = props;
-
-  unstable_setRequestLocale(locale);
   return (
-    <html lang={locale} dir={locale == "ar" ? "rtl" : "ltr"}>
+    <html lang="en">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased flex justify-center ",

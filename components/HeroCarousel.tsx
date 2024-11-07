@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Link } from "@/navigation";
+import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useRef } from "react";
@@ -25,8 +25,6 @@ const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
         align: "center",
         loop: true,
       }}
-      //   onMouseEnter={plugin.current.stop}
-      //   onMouseLeave={plugin.current.reset}
     >
       <CarouselContent className="w-full h-full -ml-2 -md:ml-4">
         {Images.map(({ id, imageUrl }) => (
@@ -34,11 +32,8 @@ const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
             <Image
               className="object-cover w-full h-full overflow-hidden rounded-lg"
               src={imageUrl}
-              // We can't use fill mode bcz its coroasual
-              // fill
               width={1000}
               height={600}
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
               alt="K Y F Malakand"
             />
           </CarouselItem>
@@ -48,11 +43,8 @@ const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
             <Image
               className="object-cover w-full h-full overflow-hidden rounded-lg"
               src="/FarooqiBookCover.jpg"
-              // We can't use fill mode bcz its coroasual
-              // fill
               width={1000}
               height={600}
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 33vw"
               alt="/Iftikhar Farooqi Book cover"
             />
           </Link>

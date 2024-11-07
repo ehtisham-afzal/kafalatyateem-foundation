@@ -1,5 +1,4 @@
 import { Languages } from "lucide-react";
-import { useTranslations } from "next-intl";
 import LanguageSelectorMenu from "./LanguageSelectorMenu";
 import { Button } from "./ui/button";
 import {
@@ -16,17 +15,16 @@ const LocalsMenus = [
 ];
 
 const LanguageSelector = () => {
-  const t = useTranslations("ChangeLanguageDropdown");
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="p-1">
-          <p className="px-2 text-base sm:text-muted-foreground">{t("Language")}</p>
+          <p className="px-2 text-base sm:text-muted-foreground">Language</p>
           <Languages />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>{t("SelectLanguage")}</DropdownMenuLabel>
+        <DropdownMenuLabel>Select Language</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <LanguageSelectorMenu Languages={LocalsMenus} />
       </DropdownMenuContent>

@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
 
 const Page = () => {
   const initialState = { message: "", errors: {} };
-  const [state, dispatch] = useFormState(donateForm, initialState);
-  const formstatus = useFormStatus();
+  const [state, formAction, isPending] = useActionState(donateForm, initialState);
+
   return (
-    <form action={dispatch} className="grid gap-4 py-4">
+    <form action={formAction} className="grid gap-4 py-4">
       <div className="py-2 space-y-2">
         <Label htmlFor="amount">
           <h2 className="text-lg font-semibold">Donation Amount</h2>
@@ -111,9 +111,9 @@ const Page = () => {
       {state?.message && (
         <p className="mt-2 text-sm text-red-500">{state.message}</p>
       )}
-      <Button type="submit" className="w-full" disabled={formstatus.pending}>
-        {formstatus.pending && <Loader2 className="size-5 mx-2 animate-spin" />}
-        {formstatus.pending ? "Submiting..." : "Donate"}
+      <Button type="submit" className="w-full" disabled={isPending}>
+        {isPending && <Loader2 className="size-5 mx-2 animate-spin" />}
+        {isPending ? "Submiting..." : "Donate"}
       </Button>
     </form>
   );

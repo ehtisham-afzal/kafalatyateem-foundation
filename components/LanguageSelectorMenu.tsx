@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "../navigation";
+import { usePathname, useRouter } from "next/link";
 import { DropdownMenuItem } from "./ui/dropdown-menu";
 
 type LanguageProps = {

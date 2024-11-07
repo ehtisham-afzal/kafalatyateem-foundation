@@ -8,14 +8,24 @@ import {
 } from "./ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { NavLinks } from "@/lib/Data";
-import { Link } from "@/navigation";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const DropDownMenuNav = () => {
-  const t = useTranslations("NavLinks");
+  const getNavLinkName = (name: string) => {
+    const names = {
+      "About": "About us",
+      "Donate": "Donate",
+      "TeamBehind": "Team Behind",
+      "Services": "Services",
+      "Contact": "Contact",
+      "Home": "Home"
+    };
+    return names[name as keyof typeof names] || name;
+  };
+
   return (
-    <div className="flex items-center  sm:hidden">
+    <div className="flex items-center sm:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="p-1">
@@ -28,13 +38,13 @@ const DropDownMenuNav = () => {
           <DropdownMenuSeparator />
           <Link href="/">
             <DropdownMenuItem className="pr-16 text-lg">
-              {t("Home")}
+              Home
             </DropdownMenuItem>
           </Link>
           {NavLinks.map((link, i) => (
             <Link key={i} href={link.Link}>
               <DropdownMenuItem className="pr-16 text-lg">
-                {t(link.Name)}
+                {getNavLinkName(link.Name)}
               </DropdownMenuItem>
             </Link>
           ))}
