@@ -199,6 +199,7 @@ export const SocialLinks = [
 export const NavLinks = [
     { Name: "About", Link: "/About" },
     { Name: "Donate", Link: "/Donate" },
+    { Name: "Posts", Link: "/posts" },
     { Name: "TeamBehind", Link: "/TeamBehind" },
     { Name: "Services", Link: "/Services" },
     { Name: "Contact", Link: "/Contact" },
