@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
-import { PostCard } from "@/components/PostCard";
-import { Title } from "@/components/Title";
+import { PostCard } from "@/components/postsRoutComponents/PostCard";
+import { Title } from "@/components/postsRoutComponents/Title";
 import { POSTS_QUERYResult } from "@/sanity/types";
 
 const options = { next: { revalidate: 60 } };

@@ -2,21 +2,27 @@ import StatisticsCard from "./Cards/StatisticsCard";
 import { PersonStanding, User2, Users } from "lucide-react";
 import OrphansInfoMobile from "./OrphansInfoMobile";
 
-const OrphansInfoSection = () => {
+type orphansTypes = {
+  male: number,
+  female: number,
+  total: number,
+}
+
+const OrphansInfoSection = ({title, orphans}:{title:string, orphans:orphansTypes}) => {
   const statistics = [
     {
       icon: <Users className="w-full h-full" />,
-      title: "120",
+      title: `${orphans.total}`,
       description: "Male&Female"
     },
     {
       icon: <PersonStanding className="w-full h-full" />,
-      title: "85",
+      title: `${orphans.male}`,
       description: "Male"
     },
     {
       icon: <User2 className="w-full h-full" />,
-      title: "35",
+      title: `${orphans.female}`,
       description: "Female"
     }
   ];
@@ -24,7 +30,7 @@ const OrphansInfoSection = () => {
   return (
     <section className="w-full py-8 space-y-8 md:space-y-12">
       <h2 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
-        Orphans we have
+        {title}
       </h2>
       <OrphansInfoMobile/>
       <div className="flex-wrap items-center justify-center hidden w-full gap-4 sm:flex md:justify-between">

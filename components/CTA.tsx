@@ -2,8 +2,16 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+type CTAProps = {
+  title: string;
+  description: string;
+  href: {
+    url: string;
+    text: string;
+  };
+};
 
-const CTA = () => {
+const CTA = ({ title, description, href }: CTAProps) => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full gap-4 p-4 overflow-hidden text-center rounded-lg text-secondary h-fit bg-gradient-to-t from-primary to-gray-900">
       <Image
@@ -21,13 +29,13 @@ const CTA = () => {
         alt="illustration"
       />
       <h3 className="text-xl font-semibold tracking-tight scroll-m-20 w-fit text-wrap text-start md:text-center">
-        The Prophet Muhammad (peace be upon him) said
+        {title}
       </h3>
       <p className="text-wrap italic text-start w-full md:w-[30rem]">
-        &ldquo;Whoever embraces an orphan of two Muslim parents by feeding him and giving him drink until he is independent of him, Paradise will certainly be necessary for him.&rdquo;(Musnad Ahmad)
+        {description}
       </p>
       <Button className="w-full md:w-fit" variant="secondary" asChild>
-        <Link href="/Donate">Donate Now</Link>
+        <Link href={href.url}>{href.text}</Link>
       </Button>
     </div>
   );

@@ -6,14 +6,20 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useRef } from "react";
 
-type ImagesTypes = { id: number; imageUrl: string };
+type CarouselImage = {
+  url: string;
+  alt: string;
+};
 
-const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
+interface HeroCarouselProps {
+  Images: CarouselImage[];
+}
+
+const HeroCarousel = ({ Images }: HeroCarouselProps) => {
   const plugin = useRef(Autoplay({ delay: 5000 }));
 
   return (
@@ -27,18 +33,18 @@ const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
       }}
     >
       <CarouselContent className="w-full h-full -ml-2 -md:ml-4">
-        {Images.map(({ id, imageUrl }) => (
-          <CarouselItem className="pl-2 w-full h-full md:pl-4" key={id}>
+        {Images.map(({ url, alt }) => (
+          <CarouselItem className="pl-2 w-full h-full md:pl-4" key={url}>
             <Image
               className="object-cover w-full h-full overflow-hidden rounded-lg"
-              src={imageUrl}
+              src={url}
               width={1000}
               height={600}
-              alt="K Y F Malakand"
+              alt={alt}
             />
           </CarouselItem>
         ))}
-        <CarouselItem className="pl-2 w-full h-full md:pl-4">
+        {/* <CarouselItem className="pl-2 w-full h-full md:pl-4">
           <Link href="/Books/40hadiths">
             <Image
               className="object-cover w-full h-full overflow-hidden rounded-lg"
@@ -48,7 +54,7 @@ const HeroCarousel = ({ Images }: { Images: ImagesTypes[] }) => {
               alt="/Iftikhar Farooqi Book cover"
             />
           </Link>
-        </CarouselItem>
+        </CarouselItem> */}
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />

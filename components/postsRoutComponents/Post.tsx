@@ -1,10 +1,10 @@
-import { Author } from "@/components/Author";
-import { Categories } from "@/components/Categories";
+import { Author } from "@/components/postsRoutComponents/Author";
+import { Categories } from "@/components/postsRoutComponents/Categories";
 import { components } from "@/sanity/PortableTextComponents";
 import { PortableText } from "next-sanity";
 import { POST_QUERYResult } from "@/sanity/types";
-import { PublishedAt } from "@/components/PublishedAt";
-import { Title } from "@/components/Title";
+import { PublishedAt } from "@/components/postsRoutComponents/PublishedAt";
+import { Title } from "@/components/postsRoutComponents/Title";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 

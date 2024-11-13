@@ -3,49 +3,49 @@ import FeaturesCard from "./Cards/FeaturesCard";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-type ServiceContent = {
-  icon: string;
-  title: string;
+type Facilities = {
+  lucidiconname: string;
+  facility: string;
   description: string;
 };
 
-const getServiceContent = (id: number): ServiceContent => {
-  const content: Record<number, ServiceContent> = {
-    1: {
-      icon: "BookText",
-      title: "Education",
-      description: "Nursery to 10th class English Medium School."
-    },
-    2: {
-      icon: "IceCreamBowl",
-      title: "Food",
-      description: "Providing daily food."
-    },
-    3: {
-      icon: "Shirt",
-      title: "Cloths",
-      description: "Provide annually two suit (i.e. school uniform)"
-    },
-    4: {
-      icon: "School",
-      title: "Shelter",
-      description: "Accommodation twenty four hours in hostel"
-    },
-    5: {
-      icon: "MoonStar",
-      title: "Islamic Teaching",
-      description: "Hifz & Tajweed, Islamic teachings."
-    }
-  };
-  return content[id] || content[5];
-};
+// const getServiceContent = (id: number): ServiceContent => {
+//   const content: Record<number, ServiceContent> = {
+//     1: {
+//       icon: "BookText",
+//       title: "Education",
+//       description: "Nursery to 10th class English Medium School."
+//     },
+//     2: {
+//       icon: "IceCreamBowl",
+//       title: "Food",
+//       description: "Providing daily food."
+//     },
+//     3: {
+//       icon: "Shirt",
+//       title: "Cloths",
+//       description: "Provide annually two suit (i.e. school uniform)"
+//     },
+//     4: {
+//       icon: "School",
+//       title: "Shelter",
+//       description: "Accommodation twenty four hours in hostel"
+//     },
+//     5: {
+//       icon: "MoonStar",
+//       title: "Islamic Teaching",
+//       description: "Hifz & Tajweed, Islamic teachings."
+//     }
+//   };
+//   return content[id] || content[5];
+// };
 
-const FeaturesAndServicesSection = () => {
+const FeaturesAndServicesSection = ({title, facilities}:{title : string, facilities : Facilities[]}) => {
   return (
     <section className="w-full pb-16 space-y-8 md:space-y-12">
       <div className="flex items-center justify-between w-full h-fit">
         <h1 className="text-3xl font-semibold tracking-tight scroll-m-20 first:mt-0">
-          Services & Facilities we Providing
+          {title}
         </h1>
         <Link
           href="/Services"
@@ -56,14 +56,14 @@ const FeaturesAndServicesSection = () => {
         </Link>
       </div>
       <div className="flex flex-wrap items-center justify-center w-full gap-4 lg:justify-between">
-        {ServicesAndFacilities.map(
+        {facilities.map(
           (id, index) =>
             index < 4 && (
               <FeaturesCard
                 key={index}
-                ImageUrl={`/Icons/${getServiceContent(Number(id)).icon}.svg`}
-                Title={getServiceContent(Number(id)).title}
-                Description={getServiceContent(Number(id)).description}
+                ImageUrl={`/Icons/${id.lucidiconname}.svg`}
+                Title={id.facility}
+                Description={id.description}
               />
             )
         )}
