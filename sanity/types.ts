@@ -68,15 +68,14 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Home = {
+export type HomePage = {
   _id: string;
-  _type: "home";
+  _type: "homePage";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  HeroSection?: {
-    title?: string;
-    description?: string;
+  name?: string;
+  heroCarousel?: Array<{
     image?: {
       asset?: {
         _ref: string;
@@ -86,65 +85,16 @@ export type Home = {
       };
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
-      alt?: string;
       _type: "image";
     };
-  };
-  herocarousel?: Array<{
     alt?: string;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
-    };
+    _type: "imagewithalt";
     _key: string;
   }>;
-  featuresAndServices?: {
-    sectionTitle?: string;
-    features?: Array<{
-      title?: string;
-      description?: string;
-      icon?: string;
-      _key: string;
-    }>;
-  };
-  gallery?: {
-    sectionTitle?: string;
-    images?: Array<{
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      caption?: string;
-      _type: "image";
-      _key: string;
-    }>;
-  };
-  orphansInfo?: {
+  heroSection?: {
     title?: string;
     description?: string;
-    statistics?: Array<{
-      label?: string;
-      value?: string;
-      _key: string;
-    }>;
-  };
-  teamBehind?: {
-    sectionTitle?: string;
-    teamMembers?: Array<{
-      name?: string;
-      role?: string;
+    heroimage?: {
       image?: {
         asset?: {
           _ref: string;
@@ -154,18 +104,87 @@ export type Home = {
         };
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
-        alt?: string;
         _type: "image";
       };
+      alt?: string;
+    };
+    buttons?: Array<{
+      text?: string;
+      href?: Slug;
+      _type: "link";
       _key: string;
     }>;
   };
-  cta?: {
+  servicesAndFacilitiesSection?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "servicesandfacilitiessection";
+  };
+  galleryImages?: Array<{
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    alt?: string;
+    _type: "imagewithalt";
+    _key: string;
+  }>;
+  orphansWeHave?: {
+    mainTitle?: string;
+    orphans?: {
+      male?: number;
+      female?: number;
+    };
+  };
+  teamBehined?: Array<{
+    name?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    desegnation?: string;
+    _type: "teammember";
+    _key: string;
+  }>;
+  ctaSection?: {
     title?: string;
     description?: string;
-    buttonText?: string;
-    buttonLink?: string;
+    href?: {
+      text?: string;
+      href?: Slug;
+    };
   };
+};
+
+export type Servicesandfacilitiessection = {
+  _id: string;
+  _type: "servicesandfacilitiessection";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  facilities?: Array<{
+    facility?: string;
+    description?: string;
+    lucidiconname?: string;
+    _type: "facilities";
+    _key: string;
+  }>;
 };
 
 export type Post = {
@@ -378,7 +397,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Home | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | HomePage | Servicesandfacilitiessection | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -524,95 +543,56 @@ export type POST_QUERYResult = {
   } | null;
 } | null;
 // Variable: HOME_QUERY
-// Query: *[_type == "home"][0]{  "herocarousel": herocarousel[]{    "url": asset->url,    alt  },  secondaryHero{    title,    description,    image{      asset->,      alt    }  },  featuresAndServices{    sectionTitle,    features[]{      title,      description,      icon    }  },  gallery{    sectionTitle,    images[]{      asset->,      alt,      caption    }  },  orphansInfo{    title,    description,    statistics[]{      label,      value    }  },  teamBehind{    sectionTitle,    teamMembers[]{      name,      role,      image{        asset->,        alt      }    }  },  cta{    title,    description,    buttonText,    buttonLink  }}
+// Query: *[_type == "homePage"][0]{  "herocarousel": heroCarousel[]{    "url": image.asset->url,    alt  },heroSection{    title,    description,    heroimage{      "image" : image.asset->url,      alt    },    "buttons" : buttons[]{      text,      "href" : href.current    }  },  servicesAndFacilitiesSection->{    title,    "facilities" : facilities[0..3]{      facility,      description,      lucidiconname    }   },   galleryImages[0..5]{    "url":image.asset->url,    alt    },    orphansWeHave{      mainTitle,      orphans{        male,      female,    "total" : male + female      }  },  teamBehined[0..3]{    name,    desegnation,    "imageUrl" : image.asset->url  },  ctaSection{    title,    description,    "href" : {"url" : href.href.current,"text":href.text}  }}
 export type HOME_QUERYResult = {
   herocarousel: Array<{
-    url: null;
+    url: string | null;
     alt: string | null;
   }> | null;
-  secondaryHero: null;
-  featuresAndServices: {
-    sectionTitle: string | null;
-    features: Array<{
-      title: string | null;
-      description: string | null;
-      icon: string | null;
-    }> | null;
-  } | null;
-  gallery: {
-    sectionTitle: string | null;
-    images: Array<{
-      asset: {
-        _id: string;
-        _type: "sanity.imageAsset";
-        _createdAt: string;
-        _updatedAt: string;
-        _rev: string;
-        originalFilename?: string;
-        label?: string;
-        title?: string;
-        description?: string;
-        altText?: string;
-        sha1hash?: string;
-        extension?: string;
-        mimeType?: string;
-        size?: number;
-        assetId?: string;
-        uploadId?: string;
-        path?: string;
-        url?: string;
-        metadata?: SanityImageMetadata;
-        source?: SanityAssetSourceData;
-      } | null;
+  heroSection: {
+    title: string | null;
+    description: string | null;
+    heroimage: {
+      image: string | null;
       alt: string | null;
-      caption: string | null;
+    } | null;
+    buttons: Array<{
+      text: string | null;
+      href: string | null;
     }> | null;
   } | null;
-  orphansInfo: {
+  servicesAndFacilitiesSection: {
+    title: string | null;
+    facilities: Array<{
+      facility: string | null;
+      description: string | null;
+      lucidiconname: string | null;
+    }> | null;
+  } | null;
+  galleryImages: Array<{
+    url: string | null;
+    alt: string | null;
+  }> | null;
+  orphansWeHave: {
+    mainTitle: string | null;
+    orphans: {
+      male: number | null;
+      female: number | null;
+      total: number | null;
+    } | null;
+  } | null;
+  teamBehined: Array<{
+    name: string | null;
+    desegnation: string | null;
+    imageUrl: string | null;
+  }> | null;
+  ctaSection: {
     title: string | null;
     description: string | null;
-    statistics: Array<{
-      label: string | null;
-      value: string | null;
-    }> | null;
-  } | null;
-  teamBehind: {
-    sectionTitle: string | null;
-    teamMembers: Array<{
-      name: string | null;
-      role: string | null;
-      image: {
-        asset: {
-          _id: string;
-          _type: "sanity.imageAsset";
-          _createdAt: string;
-          _updatedAt: string;
-          _rev: string;
-          originalFilename?: string;
-          label?: string;
-          title?: string;
-          description?: string;
-          altText?: string;
-          sha1hash?: string;
-          extension?: string;
-          mimeType?: string;
-          size?: number;
-          assetId?: string;
-          uploadId?: string;
-          path?: string;
-          url?: string;
-          metadata?: SanityImageMetadata;
-          source?: SanityAssetSourceData;
-        } | null;
-        alt: string | null;
-      } | null;
-    }> | null;
-  } | null;
-  cta: {
-    title: string | null;
-    description: string | null;
-    buttonText: string | null;
-    buttonLink: string | null;
+    href: {
+      url: string | null;
+      text: string | null;
+    };
   } | null;
 } | null;
 
@@ -623,6 +603,6 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc)[0...12]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
-    "*[_type == \"home\"][0]{\n  \"herocarousel\": herocarousel[]{\n    \"url\": asset->url,\n    alt\n  },\n  secondaryHero{\n    title,\n    description,\n    image{\n      asset->,\n      alt\n    }\n  },\n  featuresAndServices{\n    sectionTitle,\n    features[]{\n      title,\n      description,\n      icon\n    }\n  },\n  gallery{\n    sectionTitle,\n    images[]{\n      asset->,\n      alt,\n      caption\n    }\n  },\n  orphansInfo{\n    title,\n    description,\n    statistics[]{\n      label,\n      value\n    }\n  },\n  teamBehind{\n    sectionTitle,\n    teamMembers[]{\n      name,\n      role,\n      image{\n        asset->,\n        alt\n      }\n    }\n  },\n  cta{\n    title,\n    description,\n    buttonText,\n    buttonLink\n  }\n}": HOME_QUERYResult;
+    "*[_type == \"homePage\"][0]{\n  \"herocarousel\": heroCarousel[]{\n    \"url\": image.asset->url,\n    alt\n  },heroSection{\n    title,\n    description,\n    heroimage{\n      \"image\" : image.asset->url,\n      alt\n    },\n    \"buttons\" : buttons[]{\n      text,\n      \"href\" : href.current\n    }\n  },\n  servicesAndFacilitiesSection->{\n    title,\n    \"facilities\" : facilities[0..3]{\n      facility,\n      description,\n      lucidiconname\n    }\n   },\n   galleryImages[0..5]{\n    \"url\":image.asset->url,\n    alt\n    },\n    orphansWeHave{\n      mainTitle,\n      orphans{\n        male,\n      female,\n    \"total\" : male + female\n      }\n  },\n  teamBehined[0..3]{\n    name,\n    desegnation,\n    \"imageUrl\" : image.asset->url\n  },\n  ctaSection{\n    title,\n    description,\n    \"href\" : {\"url\" : href.href.current,\"text\":href.text}\n  }\n}": HOME_QUERYResult;
   }
 }
