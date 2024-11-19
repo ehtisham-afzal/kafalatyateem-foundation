@@ -95,3 +95,9 @@ export const HOME_QUERY = defineQuery(`*[_type == "homePage"][0]{
     "href" : {"url" : href.href.current,"text":href.text}
   }
 }`);
+
+export const ABOUTE_PAGE_QUERRY = defineQuery(`*[_type == "aboutepage"][0]{
+  content
+}`)
+
+export const TEAM_BEHINED_QUERRY = defineQuery(`*[_type == "teamBehined"][0]{name,teamBehined}`)

@@ -51,7 +51,7 @@ export default async function Home() {
         }} 
       />
       <TeamBehindSection 
-        team={homeData?.teamBehined?.map(member => ({
+        team={homeData?.teamBehined?.slice(0, 4).map(member => ({
           name: member.name ?? '',
           desegnation: member.desegnation ?? '',
           imageUrl: member.imageUrl ?? ''

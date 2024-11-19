@@ -5,11 +5,10 @@ import { notFound } from "next/navigation";
 
 type PostIndexProps = { params: Promise<{ slug: string }> };
 
-const options = { next: { revalidate: 60 } };
 
 export default async function Page({ params }: PostIndexProps) {
   const { slug } = await params;
-  const post = await client.fetch(POST_QUERY, { slug }, options);
+  const post = await client.fetch(POST_QUERY, { slug });
 
   if (!post) {
     notFound();

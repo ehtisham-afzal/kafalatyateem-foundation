@@ -68,6 +68,58 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type TeamBehined = {
+  _id: string;
+  _type: "teamBehined";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  teamBehined?: Array<{
+    name?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    desegnation?: string;
+    _type: "teammember";
+    _key: string;
+  }>;
+};
+
+export type Aboutepage = {
+  _id: string;
+  _type: "aboutepage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  content?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
 export type HomePage = {
   _id: string;
   _type: "homePage";
@@ -397,7 +449,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | HomePage | Servicesandfacilitiessection | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | TeamBehined | Aboutepage | HomePage | Servicesandfacilitiessection | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -595,6 +647,50 @@ export type HOME_QUERYResult = {
     };
   } | null;
 } | null;
+// Variable: ABOUTE_PAGE_QUERRY
+// Query: *[_type == "aboutepage"][0]{  content}
+export type ABOUTE_PAGE_QUERRYResult = {
+  content: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+} | null;
+// Variable: TEAM_BEHINED_QUERRY
+// Query: *[_type == "teamBehined"][0]{name,teamBehined}
+export type TEAM_BEHINED_QUERRYResult = {
+  name: string | null;
+  teamBehined: Array<{
+    name?: string;
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    desegnation?: string;
+    _type: "teammember";
+    _key: string;
+  }> | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -604,5 +700,7 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
     "*[_type == \"homePage\"][0]{\n  \"herocarousel\": heroCarousel[]{\n    \"url\": image.asset->url,\n    alt\n  },heroSection{\n    title,\n    description,\n    heroimage{\n      \"image\" : image.asset->url,\n      alt\n    },\n    \"buttons\" : buttons[]{\n      text,\n      \"href\" : href.current\n    }\n  },\n  servicesAndFacilitiesSection->{\n    title,\n    \"facilities\" : facilities[0..3]{\n      facility,\n      description,\n      lucidiconname\n    }\n   },\n   galleryImages[0..5]{\n    \"url\":image.asset->url,\n    alt\n    },\n    orphansWeHave{\n      mainTitle,\n      orphans{\n        male,\n      female,\n    \"total\" : male + female\n      }\n  },\n  teamBehined[0..3]{\n    name,\n    desegnation,\n    \"imageUrl\" : image.asset->url\n  },\n  ctaSection{\n    title,\n    description,\n    \"href\" : {\"url\" : href.href.current,\"text\":href.text}\n  }\n}": HOME_QUERYResult;
+    "*[_type == \"aboutepage\"][0]{\n  content\n}": ABOUTE_PAGE_QUERRYResult;
+    "*[_type == \"teamBehined\"][0]{name,teamBehined}": TEAM_BEHINED_QUERRYResult;
   }
 }
