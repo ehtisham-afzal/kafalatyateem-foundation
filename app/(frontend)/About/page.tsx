@@ -19,7 +19,7 @@ export default async function Page() {
         {!content ? (
           <p>...Loading</p>
         ) : (
-          <PortableText value={content.content} components={components} />
+          <PortableText value={content.content || []} components={components} />
         )}
       </section>
       <ContactInformationSection />
