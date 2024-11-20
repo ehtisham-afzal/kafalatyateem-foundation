@@ -6,7 +6,7 @@ import { authorType } from './authorType'
 import { homePage } from './homeType'
 import { servicesandfacilitiessection } from './servicesAndFacilitiestype'
 import { aboutepagetype } from './aboutePageType'
-import { teamBehined } from './teamBehinedtype'
+import { teamBehined } from './teamBehinedType'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
