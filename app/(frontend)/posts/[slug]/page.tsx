@@ -15,7 +15,7 @@ export default async function Page({ params }: PostIndexProps) {
   }
 
   return (
-    <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
+    <main className="mx-auto grid grid-cols-1 gap-6 py-12 px-2">
       <Post {...post} />
     </main>
   );
