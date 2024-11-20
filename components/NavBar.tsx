@@ -1,16 +1,19 @@
 import { NavLinks } from "@/lib/Data";
-import { Link } from "@/navigation";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 import DropDownMenuNav from "./DropDownMenuNav";
-import LanguageSelector from "./LanguageSelector";
 import NavBarLinksClient from "./NavBarLinksClient";
 
 const NavBar = () => {
-  const t = useTranslations("NavLinks");
   const TranslatedLinks = NavLinks.map((link) => ({
     ...link,
-    Name: t(link.Name),
+    Name: link.Name === "About" ? "About us" :
+         link.Name === "Donate" ? "Donate" :
+         link.Name === "TeamBehind" ? "Team Behind" :
+         link.Name === "Services" ? "Services" :
+         link.Name === "Contact" ? "Contact" :
+         link.Name === "Home" ? "Home" : link.Name
   }));
+
   return (
     <nav className="flex items-center justify-between w-full h-16">
       <Link
@@ -23,7 +26,6 @@ const NavBar = () => {
         <div className="items-center justify-center hidden sm:flex ">
           <NavBarLinksClient Links={TranslatedLinks} />
         </div>
-        <LanguageSelector />
         <DropDownMenuNav />
       </div>
     </nav>

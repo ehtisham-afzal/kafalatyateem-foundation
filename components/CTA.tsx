@@ -1,11 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
-import { useTranslations } from "next-intl";
-import { Link } from "@/navigation";
+import Link from "next/link";
+type CTAProps = {
+  title: string;
+  description: string;
+  href: {
+    url: string;
+    text: string;
+  };
+};
 
-const CTA = () => {
-  const t = useTranslations();
+const CTA = ({ title, description, href }: CTAProps) => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full gap-4 p-4 overflow-hidden text-center rounded-lg text-secondary h-fit bg-gradient-to-t from-primary to-gray-900">
       <Image
@@ -23,13 +29,13 @@ const CTA = () => {
         alt="illustration"
       />
       <h3 className="text-xl font-semibold tracking-tight scroll-m-20 w-fit text-wrap text-start md:text-center">
-        {t("Hadith.Title")}
+        {title}
       </h3>
-      <p className="text-wrap italic text-start w-full md:w-[30rem] ">
-        {t("Hadith.Content")}
+      <p className="text-wrap italic text-start w-full md:w-[30rem]">
+        {description}
       </p>
       <Button className="w-full md:w-fit" variant="secondary" asChild>
-        <Link href="/Donate">{t('DonateNow')}</Link>
+        <Link href={href.url}>{href.text}</Link>
       </Button>
     </div>
   );

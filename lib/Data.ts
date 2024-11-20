@@ -1,11 +1,11 @@
 
 export const GalleryPhotos = [
-    { src: "/YateemsEating.jpg", colSpan: 2, rowSpan: 2, alt: "Kafalat yateem foundation Orphans Eating" },
-    { src: "/YateemsReciewingBags.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation Orphans Reciewing Bags" },
+    { src: "/YateemsEating.jpg", colSpan: 2, rowSpan: 2, alt: "Kafalat yateem foundation Orphans Eating food" },
+    { src: "/YateemsReciewingBags.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation Orphans Reciewing School Bags" },
     { src: "/YateemsOnKhatm.jpg", colSpan: 1, rowSpan: 1, alt: "Orphans On Khatm ul Quraan" },
     { src: "/FunctionPhoto2.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation Skill Show FunctionPhoto" },
     { src: "/FunctionPhoto.jpg", colSpan: 1, rowSpan: 1, alt: "Kafalat yateem foundation FunctionPhoto" },
-    { src: "/YateemsGroupPhoto.jpg", colSpan: 2, rowSpan: 2, alt: "Kafalat yateem foundation Orphans GroupPhoto" },
+    { src: "/YateemsGroupPhoto.jpg", colSpan: 2, rowSpan: 2, alt: " " },
 ]
 
 export const ServicesAndFacilities: string[] = ["1", "2", "3", "4", "5"]
@@ -199,6 +199,7 @@ export const SocialLinks = [
 export const NavLinks = [
     { Name: "About", Link: "/About" },
     { Name: "Donate", Link: "/Donate" },
+    { Name: "Posts", Link: "/posts" },
     { Name: "TeamBehind", Link: "/TeamBehind" },
     { Name: "Services", Link: "/Services" },
     { Name: "Contact", Link: "/Contact" },
