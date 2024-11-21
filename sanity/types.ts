@@ -691,6 +691,16 @@ export type TEAM_BEHINED_QUERRYResult = {
     _key: string;
   }> | null;
 } | null;
+// Variable: SERVICES_AND_FACILITIES_QUERY
+// Query: *[_type == "servicesandfacilitiessection"][0]{  title,  "facilities": facilities[]{    facility,    description,    lucidiconname  }}
+export type SERVICES_AND_FACILITIES_QUERYResult = {
+  title: string | null;
+  facilities: Array<{
+    facility: string | null;
+    description: string | null;
+    lucidiconname: string | null;
+  }> | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -702,5 +712,6 @@ declare module "@sanity/client" {
     "*[_type == \"homePage\"][0]{\n  \"herocarousel\": heroCarousel[]{\n    \"url\": image.asset->url,\n    alt\n  },heroSection{\n    title,\n    description,\n    heroimage{\n      \"image\" : image.asset->url,\n      alt\n    },\n    \"buttons\" : buttons[]{\n      text,\n      \"href\" : href.current\n    }\n  },\n  servicesAndFacilitiesSection->{\n    title,\n    \"facilities\" : facilities[0..3]{\n      facility,\n      description,\n      lucidiconname\n    }\n   },\n   galleryImages[0..5]{\n    \"url\":image.asset->url,\n    alt\n    },\n    orphansWeHave{\n      mainTitle,\n      orphans{\n        male,\n      female,\n    \"total\" : male + female\n      }\n  },\n  teamBehined[0..3]{\n    name,\n    desegnation,\n    \"imageUrl\" : image.asset->url\n  },\n  ctaSection{\n    title,\n    description,\n    \"href\" : {\"url\" : href.href.current,\"text\":href.text}\n  }\n}": HOME_QUERYResult;
     "*[_type == \"aboutepage\"][0]{\n  content\n}": ABOUTE_PAGE_QUERRYResult;
     "*[_type == \"teamBehined\"][0]{name,teamBehined}": TEAM_BEHINED_QUERRYResult;
+    "*[_type == \"servicesandfacilitiessection\"][0]{\n  title,\n  \"facilities\": facilities[]{\n    facility,\n    description,\n    lucidiconname\n  }\n}": SERVICES_AND_FACILITIES_QUERYResult;
   }
 }

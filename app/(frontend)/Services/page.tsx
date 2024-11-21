@@ -1,40 +1,20 @@
-const ServicesAndFacilities = [
-  {
-    Title: "Education",
-    ImageUrl: "/Icons/BookText.svg",
-    Description: "Nursery to 10th class English Medium School.",
-  },
-  {
-    Title: "Food",
-    ImageUrl: "/Icons/IceCreamBowl.svg",
-    Description: "Providing daily food.",
-  },
-  {
-    Title: "Cloths",
-    ImageUrl: "/Icons/Shirt.svg",
-    Description: "Provide annually two suit (i.e. school uniform)",
-  },
-  {
-    Title: "Shelter",
-    ImageUrl: "/Icons/School.svg",
-    Description: "Accommodation twenty four hours in hostel",
-  },
-  {
-    Title: "Islamic Teaching",
-    ImageUrl: "/Icons/MoonStar.svg",
-    Description: "Hifz & Tajweed, Islamic teachings.",
-  },
-];
+import { client } from "@/sanity/lib/client";
+import { SERVICES_AND_FACILITIES_QUERY } from "@/sanity/lib/queries";
+import { SERVICES_AND_FACILITIES_QUERYResult } from "@/sanity/types";
 
 export async function generateMetadata() {
   return { title: "Services we Providing" };
 }
 
-const Page = () => {
+export default async function page() {
+  const data: SERVICES_AND_FACILITIES_QUERYResult = await client.fetch(
+    SERVICES_AND_FACILITIES_QUERY
+  );
+
   return (
     <section className="w-full min-h-[50dvh] space-y-14">
       <h1 className="mb-4 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-        Services & Facilities we Providing
+        {data?.title}
       </h1>
       <div className="w-full prose prose-lg">
         <table>
@@ -45,17 +25,19 @@ const Page = () => {
             </tr>
           </thead>
           <tbody>
-            {ServicesAndFacilities.map((service, index) => (
-              <tr className="hover:bg-muted" key={index}>
-                <td>{service.Title}</td>
-                <td>{service.Description}</td>
-              </tr>
-            ))}
+            {data?.facilities ? (
+              data?.facilities?.map((service, index) => (
+                <tr className="hover:bg-muted" key={index}>
+                  <td>{service.facility}</td>
+                  <td>{service.description}</td>
+                </tr>
+              ))
+            ) : (
+              <p>...Loading</p>
+            )}
           </tbody>
         </table>
       </div>
     </section>
   );
-};
-
-export default Page;
+}

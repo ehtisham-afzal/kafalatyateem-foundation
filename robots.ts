@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
             disallow: '/studio',
             // disallow: '/private/',
         },
-        sitemap: 'https://acme.com/sitemap.xml',
+        sitemap: 'https://kafalatyateem.com/sitemap.xml',
     }
 }

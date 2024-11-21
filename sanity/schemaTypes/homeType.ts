@@ -5,7 +5,12 @@ export const homePage = defineType({
     type: "document",
     name: "homePage",
     title: "Home page",
-    icon : HomeIcon,
+    icon: HomeIcon,
+    preview: {
+        prepare: () => ({
+            title: "Home Page",
+        }),
+    },
     fields: [
         defineField({
             type: "string",
@@ -145,10 +150,10 @@ export const homePage = defineType({
                     validation: (e) => e.required(),
                 }),
                 defineField({
-                    type : "object",
-                    name : "orphans",
-                    title : "Orphans",
-                    fields :[
+                    type: "object",
+                    name: "orphans",
+                    title: "Orphans",
+                    fields: [
                         defineField({
                             type: "number",
                             name: "male",

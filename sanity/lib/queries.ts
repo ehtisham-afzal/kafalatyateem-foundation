@@ -101,3 +101,14 @@ export const ABOUTE_PAGE_QUERRY = defineQuery(`*[_type == "aboutepage"][0]{
 }`)
 
 export const TEAM_BEHINED_QUERRY = defineQuery(`*[_type == "teamBehined"][0]{name,teamBehined}`)
+
+// ... existing queries ...
+
+export const SERVICES_AND_FACILITIES_QUERY = defineQuery(`*[_type == "servicesandfacilitiessection"][0]{
+  title,
+  "facilities": facilities[]{
+    facility,
+    description,
+    lucidiconname
+  }
+}`);

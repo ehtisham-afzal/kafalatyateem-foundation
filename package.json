@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gdev": "npm run typegen",
-    "gbuild" : "npm run typegen",
+    "gdev": "npm run typegen && next dev --turbopack",
+    "gbuild" : "npm run typegen && next build",
     "typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
   },
   "dependencies": {
