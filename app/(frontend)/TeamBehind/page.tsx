@@ -2,7 +2,11 @@ import PersonCard from "@/components/Cards/PersonCard";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { TEAM_BEHINED_QUERRY } from "@/sanity/lib/queries";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Services we providing",
+};
 export default async function page() {
   const data = await client.fetch(TEAM_BEHINED_QUERRY);
   return (
