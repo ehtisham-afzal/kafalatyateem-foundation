@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Separator } from "@/components/ui/separator";
+import { handleError } from "@/lib/clientUtils";
 import { cn } from "@/lib/utils";
 import { SanityLive } from "@/sanity/lib/live";
 import LocalFont from "next/font/local";
@@ -28,7 +29,7 @@ export default async function RootLayout(props: {
         {children}
         <Separator />
         <Footer />
-        <SanityLive />
+        <SanityLive onError={handleError} />
       </div>
     </main>
   );
