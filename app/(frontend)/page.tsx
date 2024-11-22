@@ -10,6 +10,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 
 export default async function Home() {
   const homeData = await client.fetch(HOME_QUERY);
+  console.log("Fetched Home Data:", homeData); // Log the fetched data
 
   return (
     <main className="flex flex-col items-center justify-between w-full min-h-screen space-y-8 ">
