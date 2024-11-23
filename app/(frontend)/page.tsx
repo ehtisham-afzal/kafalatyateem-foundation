@@ -11,7 +11,6 @@ import HeroCarousel from "@/components/HeroCarousel";
 export default async function Home() {
   const fetchData = await sanityFetch({
     query: HOME_QUERY,
-    tag: "home", // Add specific tags for revalidation
   });
   const { data: homeData } = fetchData;
 
