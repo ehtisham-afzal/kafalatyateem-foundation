@@ -8,6 +8,8 @@ import OrphansInfoSection from "@/components/OrphansInfoSection";
 import TeamBehindSection from "@/components/TeamBehindSection";
 import HeroCarousel from "@/components/HeroCarousel";
 
+export const revalidate = 'tag'; // Set revalidation by tags
+
 export default async function Home() {
   const homeData = await client.fetch(HOME_QUERY);
   console.log("Fetched Home Data:", homeData); // Log the fetched data
