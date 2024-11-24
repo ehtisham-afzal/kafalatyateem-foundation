@@ -23,7 +23,7 @@ type Sitemap = Array<{
 export default async function sitemap() {
 
 
-    const routes: Sitemap = ['', '/About', "/Donate", "/posts", '/TeamBehind', '/Services', 'Contact'].map((route: string) => ({
+    const routes: Sitemap = ['', '/About', "/Donate", "/posts", '/TeamBehind', '/Services', '/Contact'].map((route: string) => ({
         url: `${siteConfig.url}${route}`,
         lastModified: new Date().toISOString().split('T')[0],
         changeFrequency: 'daily',
