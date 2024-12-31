@@ -1,4 +1,3 @@
-import { ServicesAndFacilities } from "@/lib/Data";
 import FeaturesCard from "./Cards/FeaturesCard";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
