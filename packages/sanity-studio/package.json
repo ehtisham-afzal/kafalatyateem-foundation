@@ -1,0 +1,98 @@
+{
+  "name": "@tinloof/sanity-studio",
+  "version": "1.10.0",
+  "description": "A collection of Sanity studio plugins, fields, and components",
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tinloof/sanity-kit.git",
+    "directory": "packages/sanity-studio"
+  },
+  "license": "MIT",
+  "type": "module",
+  "author": "Tinloof",
+  "scripts": {
+    "build": "pkg build --strict --check --clean",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "watch": "pkg-utils watch --strict",
+    "dev": "run-s watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "sanityPlugin": {
+    "verifyPackage": {
+      "tsconfig": false,
+      "sanityV2Json": false,
+      "tsc": false
+    }
+  },
+  "dependencies": {
+    "@sanity/asset-utils": "^1.3.0",
+    "@sanity/document-internationalization": "^3.3.1",
+    "@sanity/icons": "^3.5.7",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/incompatible-plugin": "^1.0.5",
+    "@sanity/ui": "^2.11.8",
+    "@sanity/util": "^3.74.0",
+    "@tanstack/react-virtual": "^3.10.8",
+    "@tinloof/sanity-web": "workspace:*",
+    "lodash": "^4.17.21",
+    "nanoid": "^5.0.7",
+    "react-rx": "^4.1.18",
+    "use-debounce": "^10.0.4"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^6.12.1",
+    "@sanity/plugin-kit": "^4.0.18",
+    "@types/lodash": "^4.17.7",
+    "@types/react-is": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-sanity": "^7.1.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.36.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "npm-run-all2": "^5.0.2",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": "^18.3.1",
+    "rimraf": "^5.0.10",
+    "sanity": "^3.80.1",
+    "styled-components": "^6.1.16",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19",
+    "sanity": "^3.80.1"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
