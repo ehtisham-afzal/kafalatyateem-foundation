@@ -277,7 +277,8 @@ export function DesktopNavbar({
         <SanityButtons
           buttons={buttons ?? []}
           className="flex items-center gap-4"
-          buttonClassName="rounded-[10px]"
+          size={"sm"}
+          // buttonClassName="rounded-[10px]"
         />
       </div>
     </div>

@@ -10,7 +10,7 @@ export type CTACardProps = {
   className?: string;
 };
 
-export function CTACard({ card, className }: CTACardProps) {
+export const CTACard: React.FC<CTACardProps> = ({ card, className }) => {
   const { image, description, title, href } = card ?? {};
   return (
     <Link
@@ -42,4 +42,4 @@ export function CTACard({ card, className }: CTACardProps) {
       </div>
     </Link>
   );
-}
+};

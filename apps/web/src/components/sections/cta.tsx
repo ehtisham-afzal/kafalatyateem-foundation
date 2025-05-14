@@ -1,4 +1,5 @@
 import { Badge } from "@workspace/ui/components/badge";
+import { Card } from "@workspace/ui/components/card";
 
 import type { PagebuilderType } from "@/types";
 
@@ -11,7 +12,7 @@ export function CTABlock({ richText, title, eyebrow, buttons }: CTABlockProps) {
   return (
     <section id="features" className="my-6 md:my-16">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="bg-muted py-16 rounded-3xl px-4">
+        <Card className="py-16 rounded-3xl px-4">
           <div className="text-center max-w-3xl mx-auto space-y-8">
             {eyebrow && (
               <Badge
@@ -35,7 +36,7 @@ export function CTABlock({ richText, title, eyebrow, buttons }: CTABlockProps) {
               />
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

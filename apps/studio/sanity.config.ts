@@ -3,10 +3,10 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
-// import {
-//   unsplashAssetSource,
-//   unsplashImageAsset,
-// } from "sanity-plugin-asset-source-unsplash";
+import {
+  unsplashAssetSource,
+  unsplashImageAsset,
+} from "sanity-plugin-asset-source-unsplash";
 import { iconPicker } from "sanity-plugin-icon-picker";
 import { media, mediaAssetSource } from "sanity-plugin-media";
 
@@ -51,7 +51,7 @@ export default defineConfig({
     iconPicker(),
     media(),
     presentationUrl(),
-    // unsplashImageAsset(),
+    unsplashImageAsset(),
   ],
 
   form: {

@@ -8,11 +8,15 @@ import type { QueryHomePageDataResult } from "@/lib/sanity/sanity.types";
 import type { PagebuilderType } from "@/types";
 
 import { CTABlock } from "./sections/cta";
+import { ContactSectionBlock } from "./sections/contact-section";
 import { FaqAccordion } from "./sections/faq-accordion";
 import { FeatureCardsWithIcon } from "./sections/feature-cards-with-icon";
+import { GalleryBentoBlock } from "./sections/gallery-bento";
 import { HeroBlock } from "./sections/hero";
 import { ImageLinkCards } from "./sections/image-link-cards";
+import { StatsBlock } from "./sections/stats";
 import { SubscribeNewsletter } from "./sections/subscribe-newsletter";
+import { TestimonialSectionBlock } from "./sections/testimonial-section";
 
 type PageBlock = NonNullable<
   NonNullable<QueryHomePageDataResult>["pageBuilder"]
@@ -32,20 +36,24 @@ type PageData = {
 
 const BLOCK_COMPONENTS = {
   cta: CTABlock,
+  contactSection: ContactSectionBlock,
   faqAccordion: FaqAccordion,
   hero: HeroBlock,
   featureCardsIcon: FeatureCardsWithIcon,
   subscribeNewsletter: SubscribeNewsletter,
   imageLinkCards: ImageLinkCards,
+  stats: StatsBlock,
+  testimonialSection: TestimonialSectionBlock,
+  galleryBento: GalleryBentoBlock,
 } as const;
 
 type BlockType = keyof typeof BLOCK_COMPONENTS;
 
-export function PageBuilder({
+export const PageBuilder: React.FC<PageBuilderProps> = ({
   pageBuilder: initialPageBuilder = [],
   id,
   type,
-}: PageBuilderProps) {
+}) => {
   const pageBuilder = useOptimistic<PageBlock[], SanityDocument<PageData>>(
     initialPageBuilder,
     (currentPageBuilder, action) => {
@@ -59,7 +67,7 @@ export function PageBuilder({
 
   return (
     <main
-      className="flex flex-col gap-16 my-16 max-w-7xl mx-auto"
+      className="flex flex-col gap-16 my-16 mx-auto"
       data-sanity={createDataAttribute({
         id: id,
         baseUrl: studioUrl,

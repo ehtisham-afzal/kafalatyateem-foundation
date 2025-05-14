@@ -148,6 +148,122 @@ const subscribeNewsletterBlock = /* groq */ `
   }
 `;
 
+const statsBlock = /* groq */ `
+  _type == "stats" => {
+    ...,
+    eyebrow,
+    title,
+    description,
+    stats[]{
+      _key,
+      title,
+      value,
+      description
+    }
+  }
+`;
+
+const testimonialSectionBlock = /* groq */ `
+  _type == "testimonialSection" => {
+    _type,
+    _key,
+    eyebrow,
+    title,
+    description,
+    testimonials[]{
+      _key,
+      quote,
+      author{
+        name,
+        title,
+        avatar{
+          ...,
+          ...asset->{
+            "alt": coalesce(altText, originalFilename, "no-alt"),
+            "blurData": metadata.lqip,
+            "dominantColor": metadata.palette.dominant.background
+          },
+        }
+      }
+    }
+  }
+`;
+
+const contactSectionBlock = /* groq */ `
+  _type == "contactSection" => {
+    _type,
+    _key,
+    sectionLabel,
+    sectionTitle,
+    sectionDescription,
+    formFields{
+      namePlaceholder,
+      emailPlaceholder,
+      messagePlaceholder
+    },
+    privacyText,
+    privacyLink{
+      text,
+      url
+    },
+    submitText,
+    officesTitle,
+    officesDescription,
+    officeLocations[]{
+      _key,
+      region,
+      address,
+      zipCode,
+      coordinates{
+        lat,
+        lng
+      }
+    },
+    emailTitle,
+    emailDescription,
+    emailDepartments[]{
+      _key,
+      name,
+      email
+    },
+    socialTitle,
+    socialPlatforms[]{
+      _key,
+      name,
+      url,
+      icon
+    },
+    mapsApiKey,
+    mapsDefaultZoom,
+    mapsDefaultCenter{
+      lat,
+      lng
+    }
+  }
+`;
+
+const galleryBentoBlock = /* groq */ `
+  _type == "galleryBento" => {
+    _type,
+    _key,
+    label,
+    title,
+    description,
+    images[]{
+      _key,
+      asset->{
+        _id,
+        url,
+        metadata {
+          dimensions
+        }
+      },
+      alt,
+      size
+    }
+  }
+`;
+
 const pageBuilderFragment = /* groq */ `
   pageBuilder[]{
     ...,
@@ -156,7 +272,11 @@ const pageBuilderFragment = /* groq */ `
     ${heroBlock},
     ${faqAccordionBlock},
     ${subscribeNewsletterBlock},
-    ${imageLinkCardsBlock}
+    ${imageLinkCardsBlock},
+    ${statsBlock},
+    ${testimonialSectionBlock},
+    ${galleryBentoBlock},
+    ${contactSectionBlock},
   }
 `;
 

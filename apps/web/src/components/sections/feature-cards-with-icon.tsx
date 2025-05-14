@@ -4,6 +4,7 @@ import type { PagebuilderType } from "@/types";
 
 import { RichText } from "../richtext";
 import { SanityIcon } from "../sanity-icon";
+import { Card } from "@workspace/ui/components/card";
 
 type FeatureCardsWithIconProps = PagebuilderType<"featureCardsIcon">;
 
@@ -14,8 +15,8 @@ type FeatureCardProps = {
 function FeatureCard({ card }: FeatureCardProps) {
   const { icon, title, richText } = card ?? {};
   return (
-    <div className="rounded-3xl bg-accent p-8 md:min-h-[300px] md:p-8">
-      <span className="mb-9 flex w-fit p-3 items-center justify-center rounded-full bg-background drop-shadow-xl">
+    <Card className="rounded-3xl p-8 md:min-h-[300px] md:p-8">
+      <span className="mb-9 flex w-fit p-3 items-center justify-center rounded-full bg-accent drop-shadow-md">
         <SanityIcon icon={icon} />
       </span>
 
@@ -26,7 +27,7 @@ function FeatureCard({ card }: FeatureCardProps) {
           className="font-normal text-sm md:text-[16px] text-black/90 leading-7 text-balance dark:text-neutral-300"
         />
       </div>
-    </div>
+    </Card>
   );
 }
 
